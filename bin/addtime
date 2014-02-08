@@ -1,0 +1,24 @@
+#!/usr/bin/perl -w
+#
+# Usage:
+# ./anyscript_you_choose | ./addtime
+use strict;
+use Time::HiRes qw( gettimeofday tv_interval);
+
+my $t0 = [gettimeofday];
+my($old)=select(STDOUT);
+$|=1;
+select(STDIN);
+$|=1;
+select ($old);
+
+while(<>)
+{
+  my $elapsed = tv_interval ( $t0 );
+  printf "%07.3f %s",$elapsed,$_;
+}
+
+my $total = tv_interval ( $t0 );
+printf "%07.3f\n",$total;
+__END__
+:endofperl

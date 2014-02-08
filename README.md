@@ -9,6 +9,14 @@ For Windows I prefer my <https://github.com/StefanScherer/dotfiles-windows>.
 
 To update later on, just run the sync again.
 
+### Tools
+
+* **addtime**: show relative time stamp in stdout of another tool.
+  Usage: anothertool | addtime
+* **timeref**: show relative time diffs in logfile.
+  Usage: timeref logfile | gvim -
+
+
 # Licensing
 Copyright (c) 2014 Stefan Scherer
 
