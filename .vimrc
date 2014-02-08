@@ -5,7 +5,7 @@ set nocompatible
 set t_Co=256
 set background=dark
 syntax on
-colorscheme badwolf
+" colorscheme badwolf
 
 " Enabled later, after Pathogen
 filetype off
@@ -216,7 +216,7 @@ set relativenumber " Use relative line numbers. Current line is still in status 
 au BufReadPost,BufNewFile * set relativenumber
 
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
-call pathogen#runtime_append_all_bundles()
+" call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " JSON
