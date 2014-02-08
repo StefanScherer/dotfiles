@@ -1,4 +1,4 @@
-# dotfiles-windows
+# dotfiles
 
 Add some tweaks into current Unix/Ubuntu user's home directory.
 Inspired by <https://github.com/paulirish/dotfiles> for MacOS.
