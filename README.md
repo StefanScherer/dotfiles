@@ -7,7 +7,7 @@ For Windows I prefer my <https://github.com/StefanScherer/dotfiles-windows>.
 # Installation
     git clone https://github.com/StefanScherer/dotfiles && cd dotfiles && ./sync.sh
 
-To update later on, just run the sync again.
+To update later on, just run the sync.sh again.
 
 ### Tools
 
@@ -16,6 +16,9 @@ To update later on, just run the sync again.
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
 
+### VIM
+
+* installs **Vundle** and some other stuff like **nerdtree**
 
 # Licensing
 Copyright (c) 2014 Stefan Scherer
