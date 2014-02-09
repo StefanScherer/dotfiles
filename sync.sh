@@ -11,7 +11,7 @@ function doIt() {
         if [ ! -d ~/.vim/bundle/vundle ]; then
           git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
         fi
-	rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "LICENSE" -av . ~
+	rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "LICENSE" --exclude ".gitkeep" -av . ~
         vim +BundleInstall +qall
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
