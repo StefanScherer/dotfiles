@@ -11,6 +11,13 @@ function doIt() {
         if [ ! -d ~/.vim/bundle/vundle ]; then
           git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
         fi
+        # solarized
+        if [ ! -d ~/.solarized ]; then
+          git clone https://github.com/gmodarelli/solarize.git ~/.solarized
+          chmod +x ~/.solarized/solarize.sh
+        fi
+        ~/.solarized/solarize.sh dark
+
 	rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "LICENSE" --exclude ".gitkeep" -av . ~
         vim +BundleInstall +qall
 }

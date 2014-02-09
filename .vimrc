@@ -260,3 +260,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'altercation/vim-colors-solarized'
+
+autocmd vimenter * if !argc() | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+map <C-Tab> :tabn<CR>
+map <C-S-Tab> :tabp<CR>
+
+set background=light
+"  let g:solarized_termcolors=256
+silent! colorscheme solarized

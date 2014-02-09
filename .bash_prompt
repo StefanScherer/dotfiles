@@ -14,15 +14,16 @@ if tput setaf 1 &> /dev/null; then
 	if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
 		MAGENTA=$(tput setaf 9)
 		ORANGE=$(tput setaf 172)
-		GREEN=$(tput setaf 190)
+		GREEN=$(tput setaf 70)
 		PURPLE=$(tput setaf 141)
-		WHITE=$(tput setaf 256)
+		NORMAL=$(tput setaf 4)
 	else
 		MAGENTA=$(tput setaf 5)
 		ORANGE=$(tput setaf 4)
 		GREEN=$(tput setaf 2)
 		PURPLE=$(tput setaf 1)
-		WHITE=$(tput setaf 7)
+		NORMAL=$(tput setaf 7)
+
 	fi
 	BOLD=$(tput bold)
 	RESET=$(tput sgr0)
@@ -31,7 +32,7 @@ else
 	ORANGE="\033[1;33m"
 	GREEN="\033[1;32m"
 	PURPLE="\033[1;35m"
-	WHITE="\033[1;37m"
+	NORMAL="\033[1;37m"
 	BOLD=""
 	RESET="\033[m"
 fi
@@ -47,12 +48,12 @@ function git_info() {
 	# check if it's dirty (via github.com/sindresorhus/pure)
 	dirty=$(git diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
 
-	echo $WHITE" on "$PURPLE$branch$dirty
+	echo $NORMAL" on "$PURPLE$branch$dirty
 }
 
 # Only show username/host if not default
 function usernamehost() {
-	if [ $USER != $default_username ]; then echo "${MAGENTA}$USER ${WHITE}at ${ORANGE}$HOSTNAME $WHITEin "; fi
+	if [ $USER != $default_username ]; then echo "${MAGENTA}$USER${NORMAL} at ${ORANGE}$HOSTNAME${NORMAL} in "; fi
 }
 
 # iTerm Tab and Title Customization and prompt customization
@@ -66,4 +67,4 @@ function usernamehost() {
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$WHITE\]\n\$ \[$RESET\]"
+PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]${BOLD}\$(usernamehost)\[$GREEN\]\w\$(git_info)\[$NORMAL\]\n\$ \[$RESET\]"
