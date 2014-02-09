@@ -2,7 +2,13 @@
 cd "$(dirname "$0")"
 git pull
 function doIt() {
-        if [ ! -d "~/.vim/bundle/vundle" ]; then
+        if [ ! -d ~/code ]; then
+          mkdir ~/code
+        fi
+        if [ ! -d ~/code/z ]; then
+          git clone https://github.com/rupa/z.git ~/code/z 
+        fi
+        if [ ! -d ~/.vim/bundle/vundle ]; then
           git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
         fi
 	rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "LICENSE" -av . ~
