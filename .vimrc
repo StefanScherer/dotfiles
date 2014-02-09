@@ -3,9 +3,7 @@ set nocompatible
 
 " Set syntax highlighting options.
 set t_Co=256
-set background=dark
 syntax on
-" colorscheme badwolf
 
 " Enabled later, after Pathogen
 filetype off
@@ -100,10 +98,10 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Faster split resizing (+,-)
-if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
-endif
+"if bufwinnr(1)
+"  map + <C-W>+
+"  map - <C-W>-
+"endif
 
 " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
 map <C-j> <C-W>j
@@ -271,3 +269,28 @@ map <C-S-Tab> :tabp<CR>
 set background=light
 "  let g:solarized_termcolors=256
 silent! colorscheme solarized
+
+" Perl hacks
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+function! PerlCheck()
+  let res = system("perl -wc " . bufname("%"))
+  let tmp = bufname("%") . " syntax OK\n"
+  if tmp != res 
+    echom res
+  endif
+endfunction
+
+:autocmd BufWritePre * if &filetype == "perl" | :call Preserve(":%!perltidy -q -bli -ci=4 -l=160 -pt=2 -bt=2 -sbt=2")
+:autocmd BufWritePost * if &filetype == "perl" | :call PerlCheck()
+
