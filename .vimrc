@@ -265,6 +265,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
+call togglebg#map("<F5>")
 
 set background=light
 "  let g:solarized_termcolors=256
