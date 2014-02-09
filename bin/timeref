@@ -8,28 +8,25 @@ use Date::Parse;
 
 open LOG, $ARGV[0] or die "Unable to open file $ARGV[0]:$!\n";
 while (my $line = <LOG>)
-{
-  $line =~ s/^([0-9][0-9.:T \-]+[0-9])/&timeref($1)/geo;
-  print $line;
-}
+    {
+    $line =~ s/^([0-9][0-9.:T \-]+[0-9])/&timeref($1)/geo;
+    print $line;
+    }
 close LOG;
-
 
 my $starttime;
 my $prevtime;
+
 sub timeref
-{
-  my ($timestr) = @_;
-  my $time = str2time($timestr);
-  $starttime = $time unless defined $starttime;
-  $prevtime = $time unless defined $prevtime;
-  my $timeref = $time - $starttime;
-  my $timedelta = $time - $prevtime;
-  $prevtime = $time;
+    {
+    my ($timestr) = @_;
+    my $time = str2time($timestr);
+    $starttime = $time unless defined $starttime;
+    $prevtime  = $time unless defined $prevtime;
+    my $timeref   = $time - $starttime;
+    my $timedelta = $time - $prevtime;
+    $prevtime = $time;
 
-  my $format = "%" . length($timestr) . ".3f";
-  return sprintf "%8.3f %8.3f", $timeref, $timedelta;
-}
-
-__END__
-:endofperl
+    my $format = "%" . length($timestr) . ".3f";
+    return sprintf "%8.3f %8.3f", $timeref, $timedelta;
+    }
