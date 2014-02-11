@@ -13,7 +13,7 @@ function doIt() {
   fi
   if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then
     git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-    sudo apt-get install build-essential cmake python-dev
+    sudo apt-get install -y build-essential cmake python-dev
     (cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer)
   fi
   # solarized
