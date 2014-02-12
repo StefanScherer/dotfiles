@@ -266,7 +266,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 map <C-n> :NERDTreeToggle<CR>
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
-call togglebg#map("<F5>")
+silent! call togglebg#map("<F5>")
 
 set background=light
 "  let g:solarized_termcolors=256
