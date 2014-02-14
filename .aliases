@@ -74,3 +74,6 @@ function timerefvi() {
 
 alias logvi=timerefvi
 alias open="xdg-open"
+
+alias syncfork='git fetch upstream && git checkout master && git merge upstream/master'
+alias mergefork='git merge upstream/master'
