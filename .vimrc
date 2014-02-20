@@ -29,7 +29,7 @@ set foldcolumn=4 " Column to show folds
 set foldenable
 set foldlevel=2
 " set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
-set foldmethod=syntax " Markers are used to specify folds.
+set foldmethod=manual " Markers are used to specify folds.
 set foldminlines=0 " Allow folding single lines
 set foldnestmax=3 " Set max fold nesting level
 set formatoptions=
