@@ -269,7 +269,9 @@ map <C-S-Tab> :tabp<CR>
 silent! call togglebg#map("<F5>")
 
 set background=light
-"  let g:solarized_termcolors=256
+if has('mac')
+  let g:solarized_termcolors=256
+endif
 silent! colorscheme solarized
 
 " Perl hacks
