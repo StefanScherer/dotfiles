@@ -19,7 +19,7 @@ if tput setaf 1 &> /dev/null; then
     if [[ "$OSTYPE" =~ ^darwin ]]; then
       NORMAL=$(tput setaf 256)
     else
-      NORMAL=$(tput setaf 256)
+      NORMAL=$(tput setaf 4)
     fi
   else
     MAGENTA=$(tput setaf 5)
