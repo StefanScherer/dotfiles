@@ -73,7 +73,9 @@ function timerefvi() {
 }
 
 alias logvi=timerefvi
-alias open="xdg-open"
+if ! [[ "$OSTYPE" =~ ^darwin ]]; then
+  alias open="xdg-open"
+fi
 
 alias syncfork='git fetch upstream && git checkout master && git merge upstream/master'
 alias mergefork='git merge upstream/master'
