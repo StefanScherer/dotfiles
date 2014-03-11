@@ -1,6 +1,9 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
+if [ -e $HOME/go/bin ]; then
+  export PATH="$PATH:$HOME/go/bin"
+fi
 if [ -e /Applications/Packer ]; then
   export PATH="$PATH:/Applications/Packer"
 fi
