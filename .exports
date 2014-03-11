@@ -17,3 +17,4 @@ export HISTIGNORE="pwd:exit:date:* --help"
 
 export PACKER_CACHE_DIR=/Users/stefan/.packer_cache
 
+export GOPATH=$HOME/go
