@@ -260,6 +260,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'jelera/vim-javascript-syntax'
 Bundle 'Valloric/YouCompleteMe'
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
