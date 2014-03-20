@@ -118,13 +118,6 @@ command W w
 " Better mark jumping (line + col)
 nnoremap ' `
 
-" Hard to type things
-imap >> →
-imap << ←
-imap ^^ ↑
-imap VV ↓
-imap aa λ
-
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:¬,nbsp:_
 set fcs=fold:-
@@ -305,3 +298,22 @@ endfunction
 :autocmd BufWritePre * if &filetype == "perl" | :call Preserve(":%!perltidy -q -bli -ci=4 -l=160 -pt=2 -bt=2 -sbt=2")
 :autocmd BufWritePost * if &filetype == "perl" | :call PerlCheck()
 
+" from https://gist.github.com/nisaacson/6939960
+nnoremap <silent> <leader>e :call JSFormat()<CR>
+
+function! JSFormat()
+  " Preparation: save last search, and cursor position.
+  let l:win_view = winsaveview()
+  let l:last_search = getreg('/')
+
+  " call esformatter with the contents form and cleanup the extra newline
+  execute ":%!~/.vim/bin/js-format.sh"
+  if v:shell_error
+    echoerr 'format script failed'
+    undo
+    return 0
+  endif
+  " Clean up: restore previous search history, and cursor position
+  call winrestview(l:win_view)
+  call setreg('/', l:last_search)
+endfunction
