@@ -34,6 +34,12 @@ To update later on, just run the sync.sh again.
 * **vim-colors-solarized**
 * **YouCompleteMe**
 
+### VIM commands
+
+* `,c`: show trailing white space
+* `,ss`: strip trailing white space
+* `,e`: format JavaScript code with esformatter (`npm install -g esformatter`)
+
 # Licensing
 Copyright (c) 2014 Stefan Scherer
 

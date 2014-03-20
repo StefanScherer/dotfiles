@@ -240,9 +240,6 @@ let g:vimclojure#ParenRainbow = 1 " Enable rainbow parens
 let g:vimclojure#DynamicHighlighting = 1 " Dynamic highlighting
 let g:vimclojure#FuzzyIndent = 1 " Names beginning in 'def' or 'with' to be indented as if they were included in the 'lispwords' option
 
-" Rainbow Parenthesis
-nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
