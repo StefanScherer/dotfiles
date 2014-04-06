@@ -19,7 +19,7 @@ set undodir=~/.vim/undo
 " Set some junk
 set autoindent " Copy indent from last line when starting new line.
 set backspace=indent,eol,start
-set cursorline " Highlight current line
+" set cursorline " Highlight current line
 set diffopt=filler " Add vertical spaces to keep right and left aligned
 set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
@@ -203,8 +203,8 @@ autocmd BufReadPost *
   \ endif
 
 " Set relative line numbers
-set relativenumber " Use relative line numbers. Current line is still in status bar.
-au BufReadPost,BufNewFile * set relativenumber
+" set relativenumber " Use relative line numbers. Current line is still in status bar.
+" au BufReadPost,BufNewFile * set relativenumber
 
 " JSON
 au BufRead,BufNewFile *.json set ft=json syntax=javascript
@@ -270,6 +270,7 @@ endif
 " or directly on mac
 if has('mac')
   let g:solarized_termcolors=256
+  let g:solarized_termtrans=1
 endif
 silent! colorscheme solarized
 
