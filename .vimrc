@@ -247,12 +247,14 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'jelera/vim-javascript-syntax'
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'PProvost/vim-ps1'
+Bundle 'scrooloose/syntastic'
 
 " required after Bundle
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
 " call pathogen#runtime_append_all_bundles()
+" execute pathogen#infect()
 filetype plugin indent on
 
 let g:nerdtree_tabs_open_on_gui_startup = 0
@@ -295,8 +297,8 @@ function! PerlCheck()
   endif
 endfunction
 
-:autocmd BufWritePre * if &filetype == "perl" | :call Preserve(":%!perltidy -q -bli -ci=4 -l=160 -pt=2 -bt=2 -sbt=2")
-:autocmd BufWritePost * if &filetype == "perl" | :call PerlCheck()
+" :autocmd BufWritePre * if &filetype == "perl" | :call Preserve(":%!perltidy -q -bli -ci=4 -l=160 -pt=2 -bt=2 -sbt=2")
+" :autocmd BufWritePost * if &filetype == "perl" | :call PerlCheck()
 
 " from https://gist.github.com/nisaacson/6939960
 nnoremap <silent> <leader>e :call JSFormat()<CR>
