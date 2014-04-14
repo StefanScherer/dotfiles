@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 # Script to automate https://help.github.com/articles/why-is-git-always-asking-for-my-password
 # derived from https://gist.github.com/m14t/3056747
  
@@ -9,16 +9,22 @@ if [ -z "$REPO_URL"  ]; then
   exit
 fi
        
-USER=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*)(.git|)#\1#p'`
+USER=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*).git#\1#p'`
 if [ -z "$USER"  ]; then
-  echo "-- ERROR:  Could not identify User."
-  exit
+  USER=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*)#\1#p'`
+  if [ -z "$USER"  ]; then
+    echo "-- ERROR:  Could not identify User."
+    exit
+  fi
 fi
            
-REPO=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*)(.git|)#\2#p'`
+REPO=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*).git#\2#p'`
 if [ -z "$REPO"  ]; then
-  echo "-- ERROR:  Could not identify Repo."
-  exit
+  REPO=`echo $REPO_URL | sed -Ene's#https://github.com/([^/]*)/(.*)#\2#p'`
+  if [ -z "$REPO"  ]; then
+    echo "-- ERROR:  Could not identify Repo."
+    exit
+  fi
 fi
                
 NEW_URL="git@github.com:$USER/$REPO.git"
