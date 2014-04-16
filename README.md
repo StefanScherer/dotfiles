@@ -27,6 +27,16 @@ To update later on, just run the sync.sh again.
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
 
+### Sublime Text 3
+
+My preferences for Sublime Text 3 are also stored in the repo. Be aware.
+To have sublime in command line, I use following symlink:
+
+```
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
+```
+
+
 ### VIM
 
 * installs **Vundle** and some other stuff
