@@ -23,7 +23,7 @@ function doIt() {
   fi
   ~/.solarized/solarize.sh light
 
-  rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" -av . ~
+  rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" -av . ~
   vim +BundleInstall +qall
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
