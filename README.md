@@ -15,6 +15,8 @@ To update later on, just run the sync.sh again.
   Usage: anothertool | addtime
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
+* **syncfork**: fetch from upstream and merge master branch
+* **fix_github_https_repo**: switch a cloned repo from https to ssh
 
 ### Aliases
 
@@ -30,12 +32,20 @@ To update later on, just run the sync.sh again.
 ### Sublime Text 3
 
 My preferences for Sublime Text 3 are also stored in the repo. Be aware.
-To have sublime in command line, I use following symlink:
+To have sublime in command line, I use my helper script `subl`
+The following packages will be installed by Package Control
 
-```
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ~/bin/subl
-```
+* **ApplySyntax**
+* **GoSublime**
+* **Markdown Preview**
+* **PowerShell**
+* **Solarized Color Scheme**
+* **Solarized Toggle**
 
+
+### Sublime commands
+
+* `alt+m` open markdown file in browser
 
 ### VIM
 

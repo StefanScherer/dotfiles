@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ -f "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]; then
+  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $*
+fi
