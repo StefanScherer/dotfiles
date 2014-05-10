@@ -17,6 +17,7 @@ To update later on, just run the sync.sh again.
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
 * **fix_github_https_repo**: switch a cloned repo from https to ssh
+* **vagrantd**: run vagrant in debug mode, live measure times in console, while capturing debug in logfile
 
 ### Aliases
 
