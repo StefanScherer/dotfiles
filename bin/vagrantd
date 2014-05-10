@@ -95,9 +95,9 @@ close $logfh;
 my $exitcode = $? >> 8;
 if ($exitcode) {
     print elapsed() . colored(" EXITCODE: $exitcode", 'bold red') . "\n";
+    print colored("See logfile $logfile for more details.\n", 'bold red');
 } else {
     print elapsed() . " EXITCODE: $exitcode\n";
-    print "See logfile $logfile for more details.\n";
 }
 
 {
