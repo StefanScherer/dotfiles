@@ -92,7 +92,13 @@ while(my @ready = $sel->can_read) {
 waitpid $pid, 0; # wait for it to die
 close $logfh;
 
-printf elapsed() . " EXITCODE: $?\n";
+my $exitcode = $? >> 8;
+if ($exitcode) {
+    print elapsed() . colored(" EXITCODE: $exitcode", 'bold red') . "\n";
+} else {
+    print elapsed() . " EXITCODE: $exitcode\n";
+    print "See logfile $logfile for more details.\n";
+}
 
 {
     my $tstart;
