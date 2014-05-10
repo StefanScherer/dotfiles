@@ -22,8 +22,8 @@ use IPC::Open3;
 use IO::Select;
 use Symbol;
 use Time::HiRes qw(gettimeofday tv_interval);
+use Term::ANSIColor;
 
-my $t0 = [gettimeofday];
 my $argv0 = substr $0, 0, (length($0) - 1);
 $argv0 =~ s/^.*\///; # remove ./ or /Users/... any path 
 
@@ -39,9 +39,8 @@ if ($cmd =~ /^vagrant/ && $cmd !~ /--debug/) {
     $cmd .= " --debug";
 }
 
-my $elapsed = tv_interval($t0);
-printf "%07.3f START: $cmd\n", $elapsed;
-printf "%07.3f LOGFILE: $logfile\n", $elapsed;
+print elapsed() . " START: $cmd\n";
+print elapsed() . " LOGFILE: $logfile\n";
 
 my $logfh;
 open $logfh, ">$logfile" or die "Can't open logfile $logfile: $!";
@@ -73,15 +72,14 @@ while(my @ready = $sel->can_read) {
             $sel->remove($fh); # remove it from the list
             next;              # and go handle the next FH
         }
-        my $elapsed = sprintf "%07.3f", tv_interval($t0);
         if($fh == $outfh) {     # if we read from the outfh
             if ($line !~ /^(\s*<|\"SEND|\"RECV|#<Nokogiri::XML)/ ) { # skip vagrant-vloud debug HTTP traffic
-                print "$elapsed $line"; # print it to OUTFH
+                print elapsed() . " $line"; # print it to OUTFH
             }
             print $logfh $line;
         } elsif($fh == $errfh) {# do the same for errfh  
             if ($line =~ /INFO interface: error: (.*)/ ) { # print error messages
-                print "$elapsed $1\n"; # print it to OUTFH
+                print elapsed() . " " . colored($1, 'red') . "\n"; # print it to OUTFH
             }
             print $logfh $line;
         } else { # we read from something else?!?!
@@ -94,12 +92,36 @@ while(my @ready = $sel->can_read) {
 waitpid $pid, 0; # wait for it to die
 close $logfh;
 
-my $total = tv_interval($t0);
-printf "%07.3f EXITCODE: $?\n", $total;
+printf elapsed() . " EXITCODE: $?\n";
 
-
-sub increaseCounter
 {
+    my $tstart;
+    my $tlast;
+
+    sub elapsed {
+        my $tnow = [gettimeofday];
+        $tstart = $tnow unless defined $tstart;
+        $tlast = $tnow unless defined $tlast;
+
+        my $timestamp = sprintf "%07.3f", tv_interval($tstart, $tnow);
+        my $delta = tv_interval($tlast, $tnow);
+
+        $tlast = $tnow;
+
+        my $text;
+        if ($delta >= 1.0) {
+            $text = colored ($timestamp, 'bold red')
+        } elsif ($delta >= 0.5) {
+            $text = colored ($timestamp, 'bold orange')
+        } else {
+            $text = $timestamp;
+        }
+
+        return $text;
+    }
+}
+
+sub increaseCounter {
     my $counter = 1;
     if (-f "counter.txt") {
         open my $fh, "counter.txt" or return $counter;
