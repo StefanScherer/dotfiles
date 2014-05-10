@@ -269,13 +269,14 @@ set background=light
 if !empty($SSH_CONNECTION)
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
+  silent! colorscheme solarized
 endif
 " or directly on mac
-if has('mac')
+if has('mac') && $HOSTNAME == "Stefans-MacBook-Pro.local"
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
+  silent! colorscheme solarized
 endif
-silent! colorscheme solarized
 
 " Perl hacks
 function! Preserve(command)
