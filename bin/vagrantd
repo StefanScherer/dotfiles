@@ -112,7 +112,7 @@ printf elapsed() . " EXITCODE: $?\n";
         if ($delta >= 1.0) {
             $text = colored ($timestamp, 'bold red')
         } elsif ($delta >= 0.5) {
-            $text = colored ($timestamp, 'bold on_yellow')
+            $text = colored ($timestamp, 'bold yellow')
         } else {
             $text = $timestamp;
         }
