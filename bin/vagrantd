@@ -73,15 +73,17 @@ while(my @ready = $sel->can_read) {
             next;              # and go handle the next FH
         }
         if($fh == $outfh) {     # if we read from the outfh
+            my $elapsed = elapsed();
             if ($line !~ /^(\s*<|\"SEND|\"RECV|#<Nokogiri::XML)/ ) { # skip vagrant-vloud debug HTTP traffic
-                print elapsed() . " $line"; # print it to OUTFH
+                print $elapsed . " $line"; # print it to OUTFH
             }
-            print $logfh $line;
+            print $logfh $elapsed . " OUT " . $line;
         } elsif($fh == $errfh) {# do the same for errfh  
+            my $elapsed = elapsed();
             if ($line =~ /INFO interface: error: (.*)/ ) { # print error messages
                 print elapsed() . " " . colored($1, 'red') . "\n"; # print it to OUTFH
             }
-            print $logfh $line;
+            print $logfh $elapsed . " ERR " . $line;
         } else { # we read from something else?!?!
             die "Shouldn't be here\n";
         }
