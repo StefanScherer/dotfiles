@@ -74,7 +74,8 @@ while(my @ready = $sel->can_read) {
         }
         if($fh == $outfh) {     # if we read from the outfh
             my $elapsed = elapsed();
-            if ($line !~ /^(\s*<|\"SEND|\"RECV|#<Nokogiri::XML)/ ) { # skip vagrant-vloud debug HTTP traffic
+            if ($line !~ /^(\s*<|\"SEND|\"RECV|#<Nokogiri::XML|{|})/ &&
+                $line !~ /( -> SEND | <- RECV|" => ")/ ) { # skip vagrant-vloud debug HTTP traffic
                 print $elapsed . " $line"; # print it to OUTFH
             }
             print $logfh $elapsed . " OUT " . $line;
