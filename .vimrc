@@ -265,14 +265,12 @@ map <C-S-Tab> :tabp<CR>
 silent! call togglebg#map("<F5>")
 
 set background=light
-" ssh from mac to ubuntu
-if !empty($SSH_CONNECTION)
+" directly on mac
+if has('mac') && $HOSTNAME == "Stefans-MacBook-Pro.local"
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
   silent! colorscheme solarized
-endif
-" or directly on mac
-if has('mac') && $HOSTNAME == "Stefans-MacBook-Pro.local"
+else
   let g:solarized_termcolors=256
   let g:solarized_termtrans=1
   silent! colorscheme solarized
