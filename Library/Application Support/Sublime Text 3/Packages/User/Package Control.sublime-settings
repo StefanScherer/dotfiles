@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"ApplySyntax",
+		"EditorConfig",
 		"GoSublime",
 		"Markdown Preview",
 		"PowerShell",
