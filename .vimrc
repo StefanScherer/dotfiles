@@ -242,14 +242,15 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
+" Bundle 'scrooloose/nerdtree'
+" Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'jelera/vim-javascript-syntax'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'PProvost/vim-ps1'
 Bundle 'scrooloose/syntastic'
+Bundle 'editorconfig/editorconfig-vim'
 
 " required after Bundle
 " Emulate bundles, allow plugins to live independantly. Easier to manage.
