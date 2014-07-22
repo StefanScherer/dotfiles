@@ -9,6 +9,15 @@ For Windows I prefer my <https://github.com/StefanScherer/dotfiles-windows>.
 
 To update later on, just run the sync.sh again.
 
+The usage of sync.sh is
+
+```
+sync.sh [--all|-a] [--force|-f]
+
+--all|-a     install all tools, also YouCompleteMe (big dependencies)
+--force|-f   force overwriting files in $HOME
+```
+
 ### Tools
 
 * **addtime**: show relative time stamp in stdout of another tool.
@@ -37,6 +46,7 @@ To have sublime in command line, I use my helper script `subl`
 The following packages will be installed by Package Control
 
 * **ApplySyntax**
+* **EditorConfig**
 * **GoSublime**
 * **Markdown Preview**
 * **PowerShell**
@@ -51,9 +61,8 @@ The following packages will be installed by Package Control
 ### VIM
 
 * installs **Vundle** and some other stuff
-* **nerdtree**
+* **EditorConfig**
 * **vim-colors-solarized**
-* **YouCompleteMe**
 
 ### VIM commands
 

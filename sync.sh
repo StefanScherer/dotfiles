@@ -12,9 +12,12 @@ function doIt() {
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   fi
   if [ ! -d ~/.vim/bundle/YouCompleteMe ]; then
-    git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
-    sudo apt-get install -y build-essential cmake python-dev
-    (cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer)
+    if [ "$1" == "--all" -o "$1" == "-a" ]; then
+      shift
+      git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
+      sudo apt-get install -y build-essential cmake python-dev
+      (cd ~/.vim/bundle/YouCompleteMe && git submodule update --init --recursive && ./install.sh --clang-completer)
+    fi
   fi
   # solarized
   if [ ! -d ~/.solarized ]; then
