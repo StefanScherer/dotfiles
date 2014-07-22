@@ -1,0 +1,11 @@
+function http-vcloud-login {
+  http --session=vcloud-vagrant --verify=no \
+    -a vagrant@SS \
+    POST https://roecloud001/api/sessions \
+    'Accept:application/*+xml;version=5.5' \
+    --pretty colors
+}
+
+function http-vcloud {
+  http --session=vcloud-vagrant --verify=no --pretty colors --print hb "https://roecloud001$@";
+}
