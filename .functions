@@ -7,5 +7,9 @@ function http-vcloud-login {
 }
 
 function http-vcloud {
+  if [[ $@ =~ ^http ]]; then
+    http --session=vcloud-ss-vagrant --verify=no --pretty colors --print hb "$@";
+  else
     http --session=vcloud-ss-vagrant --verify=no --pretty colors --print hb "https://roecloud001$@";
+  fi
 }
