@@ -15,7 +15,7 @@ alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 twitter.c
 alias bunyip='node ~/code/bunyip/cli.js'
 alias spotify="osascript ~/code/SpotifyControl/SpotifyControl.scpt"
 alias vlc="osascript ~/code/VLCControl/VLCControl.scpt"
-
+alias kid3=/Applications/kid3.app/Contents/MacOS/kid3
 alias solarize=~/.solarized/solarize.sh
 
 # Detect which `ls` flavor is in use
