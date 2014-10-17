@@ -28,6 +28,9 @@ function doIt() {
 
   rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" -av . ~
   vim +BundleInstall +qall
+  if [ ! -d ~/.atom/packages/parcel ]; then
+    apm install parcel
+  fi
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   doIt
