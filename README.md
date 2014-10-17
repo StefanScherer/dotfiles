@@ -39,6 +39,22 @@ sync.sh [--all|-a] [--force|-f]
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
 
+### Atom
+
+My preferences for Atom.io are also stored here.
+
+* **autocomplete-plus** - `keymap.cson` use ENTER instead of TAB
+* **editorconfig**
+* **language-batch**
+* **language-powershell**
+
+To setup Atom from scratch, first install it, then
+```bash
+brew cask install atom
+apm install parcel
+```
+Then open Atom and use menu `Packages / Parcel / Sync` to install all other plugins.
+
 ### Sublime Text 3
 
 My preferences for Sublime Text 3 are also stored in the repo. Be aware.
