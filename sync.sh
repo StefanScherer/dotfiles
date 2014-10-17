@@ -31,7 +31,7 @@ function doIt() {
     vim +BundleInstall +qall
   fi
   if [ ! -d ~/.atom/packages/parcel ]; then
-    if which vim 2>&1 >/dev/null; then
+    if which apm 2>&1 >/dev/null; then
       apm install parcel
     fi
   fi
