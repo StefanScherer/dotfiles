@@ -38,6 +38,7 @@ sync.sh [--all|-a] [--force|-f]
 * **~**: go into users home directory
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
+* **gitls**: show git status as in `.bash_prompt` for a directory of repos
 
 ### Sublime Text 3
 
