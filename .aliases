@@ -110,7 +110,7 @@ function git_info_recursive() {
     # check if it's dirty (via github.com/sindresorhus/pure)
     dirty=$(git --git-dir=$d --work-tree=$d/.. diff --quiet --ignore-submodules HEAD &>/dev/null; [ $? -eq 1 ]&& echo -e "*")
     dir=`echo $d | sed -e 's|^\.\/||' -e 's|\/.git||'`
-    echo $RESET$BOLD$GREEN"$dir on "$PURPLE$branch$dirty$RESET
+    echo $RESET$BOLD$GREEN"$dir$RESET$BOLD on "$PURPLE$branch$dirty$RESET
   done
 }
 
