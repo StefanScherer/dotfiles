@@ -27,7 +27,14 @@ function doIt() {
   ~/.solarized/solarize.sh light
 
   rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" -av . ~
-  vim +BundleInstall +qall
+  if which vim 2>&1 >/dev/null; then
+    vim +BundleInstall +qall
+  fi
+  if [ ! -d ~/.atom/packages/parcel ]; then
+    if which apm 2>&1 >/dev/null; then
+      apm install parcel
+    fi
+  fi
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
   doIt
