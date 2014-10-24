@@ -27,6 +27,7 @@ sync.sh [--all|-a] [--force|-f]
 * **syncfork**: fetch from upstream and merge master branch
 * **fix_github_https_repo**: switch a cloned repo from https to ssh
 * **vagrantd**: run vagrant in debug mode, live measure times in console, while capturing debug in logfile
+* **z**: "z foo" - cd to most frecent dir matching foo
 
 ### Aliases
 
@@ -38,6 +39,8 @@ sync.sh [--all|-a] [--force|-f]
 * **~**: go into users home directory
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
+* **gitcloneall**: clone all repos of an organization or user
+* **gitall**: start a git command for all sub directories
 * **gitls**: show git status as in `.bash_prompt` for a directory of repos
 
 ### Atom
