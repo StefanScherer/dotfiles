@@ -37,3 +37,8 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[user]
+	name = Stefan Scherer
+	email = scherer_stefan@icloud.com
+[push]
+	default = simple
