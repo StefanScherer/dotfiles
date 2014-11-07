@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"ApplySyntax",
+		"Cucumber",
 		"EditorConfig",
 		"GoSublime",
 		"Markdown Preview",
