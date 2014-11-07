@@ -42,6 +42,7 @@ sync.sh [--all|-a] [--force|-f]
 * **gitcloneall**: clone all repos of an organization or user
 * **gitall**: start a git command for all sub directories
 * **gitls**: show git status as in `.bash_prompt` for a directory of repos
+* **git undo-commit**: undo last commit, as it says
 
 ### Atom
 
