@@ -31,18 +31,19 @@ sync.sh [--all|-a] [--force|-f]
 
 ### Aliases
 
-* **solarize**: change between **dark** and **light** in terminal
 * **..**: one dir up
 * **...**: two dirs up
 * **....**: three dirs up
 * **.....**: four dirs up
 * **~**: go into users home directory
-* **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
-* **logvi logfile**: view a log file with relative times in gvim
+* **fuck**: repeat last command with `sudo` ;-)
 * **gitcloneall**: clone all repos of an organization or user
 * **gitall**: start a git command for all sub directories
 * **gitls**: show git status as in `.bash_prompt` for a directory of repos
 * **git undo-commit**: undo last commit, as it says
+* **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
+* **logvi logfile**: view a log file with relative times in gvim
+* **solarize**: change between **dark** and **light** in terminal
 
 ### Atom
 
