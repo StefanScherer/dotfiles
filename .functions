@@ -85,3 +85,5 @@ function gitls {
     echo $RESET$BOLD$GREEN"$dir$RESET$BOLD on "$PURPLE$branch$dirty$RESET
   done
 }
+
+function gi() { curl -L -s https://www.gitignore.io/api/\$@ ; }
