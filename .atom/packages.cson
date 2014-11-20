@@ -1,6 +1,8 @@
 'packages': [
   'autocomplete-plus'
+  'cucumber'
   'editorconfig'
+  'feedback'
   'language-batch'
   'language-powershell'
   'parcel'
@@ -22,8 +24,8 @@
   'command-palette'
   'deprecation-cop'
   'dev-live-reload'
+  'encoding-selector'
   'exception-reporting'
-  'feedback'
   'find-and-replace'
   'fuzzy-finder'
   'git-diff'
