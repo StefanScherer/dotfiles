@@ -26,7 +26,7 @@ function doIt() {
   fi
   ~/.solarized/solarize.sh light
 
-  rsync --exclude ".git/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" --exclude "fetch-atom-prefs.sh" -av . ~
+  rsync --exclude ".git/" --exclude "images/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" --exclude "fetch-atom-prefs.sh" -av . ~
   if which vim 2>&1 >/dev/null; then
     vim +BundleInstall +qall
   fi

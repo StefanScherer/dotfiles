@@ -4,6 +4,10 @@ Add some tweaks into current Unix/Ubuntu user's home directory.
 Inspired by <https://github.com/paulirish/dotfiles> for MacOS.
 For Windows I prefer my <https://github.com/StefanScherer/dotfiles-windows>.
 
+This is what the terminal looks like
+
+![dotfiles.png](images/dotfiles.png)
+
 # Installation
     git clone https://github.com/StefanScherer/dotfiles && cd dotfiles && ./sync.sh
 
@@ -40,7 +44,8 @@ sync.sh [--all|-a] [--force|-f]
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
 * **gitcloneall**: clone all repos of an organization or user
 * **gitall**: start a git command for all sub directories
-* **gitls**: show git status as in `.bash_prompt` for a directory of repos, you may add dirs like 'a\*' to filter dirs
+* **gitls**: show git status of all repos in current dir, you may add args like in `ls` to filter dirs
+  ![gitls.png](images/gitls.png)
 * **git undo-commit**: undo last commit, as it says
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
