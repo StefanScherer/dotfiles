@@ -53,7 +53,7 @@ sync.sh [--all|-a] [--force|-f]
 * **gitall**: start a git command for all sub directories
   ```
   gitall pull
-  vi */README.md
+  vi \*/README.md
   gitall add README.md
   gitall commit -m "updated README.md"
   gitall push
