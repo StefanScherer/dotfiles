@@ -29,7 +29,6 @@ sync.sh [--all|-a] [--force|-f]
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
-* **fix_github_https_repo**: switch a cloned repo from https to ssh
 * **vagrantd**: run vagrant in debug mode, live measure times in console, while capturing debug in logfile
 * **z**: "z foo" - cd to most frecent dir matching foo
 
