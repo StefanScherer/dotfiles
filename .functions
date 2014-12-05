@@ -25,7 +25,7 @@ function gitcloneall {
   if [ "$#" -eq 2  ]; then
     user="-u $2"
   fi
-  curl $user -s https://api.github.com/orgs/$org/repos?per_page=200 | jq '.[] | .ssh_url' | sed -e s/git.*$org/$1/ | xargs -I % git clone %
+  curl $user -s https://api.github.com/users/$org/repos?per_page=200 | jq '.[] | .ssh_url' | sed -e s/git.*$org/$1/ | xargs -I % git clone %
 }
 
 function gitall {

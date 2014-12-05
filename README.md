@@ -43,11 +43,25 @@ sync.sh [--all|-a] [--force|-f]
 * **fuck**: repeat last command with `sudo` ;-)
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
 * **gitcloneall**: clone all repos of an organization or user
+  ```
+  Usage: gitcloneall git@github.com:YOUR_ORG [user[:pass]]
+  Clones all repos of a GitHub org or user.
+
+  gitcloneall git@github.com:StefanScherer
+  gitcloneall git@github.com:myorg myuser:password_to_access_private_repos
+  ```
 * **gitall**: start a git command for all sub directories
+  ```
+  gitall pull
+  vi */README.md
+  gitall add README.md
+  gitall commit -m "updated README.md"
+  gitall push
+  ```
 * **gitls**: show git status of all repos in current dir, you may add args like in `ls` to filter dirs
   ![gitls.png](images/gitls.png)
 * **git undo-commit**: undo last commit, as it says
-* **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
+* **hosts**: edit your hosts file
 * **logvi logfile**: view a log file with relative times in gvim
 * **solarize**: change between **dark** and **light** in terminal
 
