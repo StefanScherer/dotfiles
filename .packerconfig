@@ -1,5 +1,0 @@
-{
-  "post-processors": {
-      "vagrant-vmware-ovf": "packer-post-processor-vagrant-vmware-ovf"
-  }
-}

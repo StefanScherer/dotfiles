@@ -113,11 +113,6 @@ The following packages will be installed by Package Control
 * `,ss`: strip trailing white space
 * `,e`: format JavaScript code with esformatter (`npm install -g esformatter`)
 
-### Packer Config
-
-I have added $HOME/.packerconfig to my dotfiles as I use the packer-post-processor-vagrant-vmware-ovf plugin
-with [go get github.com/gosddc/packer-post-processor-vagrant-vmware-ovf](https://github.com/gosddc/packer-post-processor-vagrant-vmware-ovf).
-
 # Licensing
 Copyright (c) 2014 Stefan Scherer
 
