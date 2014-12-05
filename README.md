@@ -54,7 +54,7 @@ sync.sh [--all|-a] [--force|-f]
   ```
   gitall pull
 
-  vi \*/README.md
+  vi */README.md
 
   gitall add README.md
   gitall commit -m "updated README.md"
