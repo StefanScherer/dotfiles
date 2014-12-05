@@ -40,7 +40,7 @@ sync.sh [--all|-a] [--force|-f]
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
 * **gitcloneall**: clone all repos of an organization or user
 * **gitall**: start a git command for all sub directories
-* **gitls**: show git status as in `.bash_prompt` for a directory of repos
+* **gitls**: show git status as in `.bash_prompt` for a directory of repos, you may add dirs like 'a\*' to filter dirs
 * **git undo-commit**: undo last commit, as it says
 * **hosts**: edit your hosts file, if sudo is missing, call `cinst sudo`
 * **logvi logfile**: view a log file with relative times in gvim
