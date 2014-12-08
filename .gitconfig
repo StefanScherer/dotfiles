@@ -31,7 +31,6 @@
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
 	pushInsteadOf = "https://github.com/"
-	pushInsteadOf = "https://bitbucket.org/"
 [url "git://github.com/"]
 	insteadOf = "github:"
 [url "git@gist.github.com:"]
@@ -40,6 +39,8 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[url "git@bicketbucket.com:"]
+	pushInsteadOf = "https://bitbucket.org/"
 [user]
 	name = Stefan Scherer
 	email = scherer_stefan@icloud.com
