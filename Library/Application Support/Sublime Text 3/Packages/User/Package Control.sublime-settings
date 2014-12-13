@@ -2,6 +2,7 @@
 	"installed_packages":
 	[
 		"ApplySyntax",
+		"Bats (Bash Automated Testing System)",
 		"Cucumber",
 		"EditorConfig",
 		"GoSublime",

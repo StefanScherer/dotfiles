@@ -89,6 +89,7 @@ To have sublime in command line, I use my helper script `subl`
 The following packages will be installed by Package Control
 
 * **ApplySyntax**
+* **Bats**
 * **Cucumber**
 * **EditorConfig**
 * **GoSublime**
