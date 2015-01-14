@@ -22,6 +22,11 @@ function gitcloneall {
   fi
   org=$(echo $1 | sed -e s/.*://)
   user=""
+  if [ -f ~/.config/hub ]; then
+    user=`awk '/- user:/{print $NF}' ~/.config/hub`
+    oauth=`awk '/oauth_token:/{print $NF}' ~/.config/hub`
+    user="$user:$oauth"
+  fi
   if [ "$#" -eq 2  ]; then
     user="-u $2"
   fi
