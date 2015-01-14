@@ -1,12 +1,22 @@
 {
+	"in_process_packages":
+	[
+	],
+	"installed_dependencies":
+	[
+		"0_package_control_loader",
+		"bz2"
+	],
 	"installed_packages":
 	[
+		"Ansible",
 		"ApplySyntax",
 		"Bats (Bash Automated Testing System)",
 		"Cucumber",
 		"EditorConfig",
 		"GoSublime",
 		"Markdown Preview",
+		"Package Control",
 		"PowerShell",
 		"Solarized Color Scheme",
 		"Solarized Toggle"
