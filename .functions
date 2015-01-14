@@ -25,7 +25,7 @@ function gitcloneall {
   if [ -f ~/.config/hub ]; then
     user=`awk '/- user:/{print $NF}' ~/.config/hub`
     oauth=`awk '/oauth_token:/{print $NF}' ~/.config/hub`
-    user="$user:$oauth"
+    user="-H 'Authorization: token $oauth'"
   fi
   if [ "$#" -eq 2  ]; then
     user="-u $2"
