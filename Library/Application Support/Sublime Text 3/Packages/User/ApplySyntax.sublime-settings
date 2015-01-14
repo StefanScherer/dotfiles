@@ -17,7 +17,7 @@
 	            {"file_name": ".*/handler/.*.yml$"},
 	            {"file_name": ".*/vars/.*.yml$"},
 	            {"file_name": ".*/roles/.*.yml$"},
-	            {"file_name": ".*/.*ansible.*/.*.yml$"}
+	            // {"file_name": ".*/.*ansible.*/.*.yml$"}
 	        ]
         }
     ]
