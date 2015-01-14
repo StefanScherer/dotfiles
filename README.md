@@ -24,6 +24,7 @@ sync.sh [--all|-a] [--force|-f]
 
 ### Tools
 
+* [autoenv](https://github.com/kennethreitz/autoenv) - Directory-based environments
 * **addtime**: show relative time stamp in stdout of another tool.
   Usage: anothertool | addtime
 * **timeref**: show relative time diffs in logfile.
@@ -88,6 +89,7 @@ My preferences for Sublime Text 3 are also stored in the repo. Be aware.
 To have sublime in command line, I use my helper script `subl`
 The following packages will be installed by Package Control
 
+* **Ansible**
 * **ApplySyntax**
 * **Bats**
 * **Cucumber**
