@@ -42,3 +42,6 @@ source ~/bin/git-completion.bash
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
+
+# GVM
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
