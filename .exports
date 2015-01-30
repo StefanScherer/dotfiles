@@ -15,6 +15,6 @@ export HISTTIMEFORMAT
 # Make some commands not show up in history
 export HISTIGNORE="pwd:exit:date:* --help"
 
-export PACKER_CACHE_DIR=/Users/stefan/.packer_cache
+export PACKER_CACHE_DIR=$HOME/.packer_cache
 
 export GOPATH=$HOME/go
