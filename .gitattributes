@@ -5,3 +5,15 @@
 *.sh text eol=lf
 *.txt text eol=lf
 *.conf text eol=lf
+
+.aliases text eol=lf
+.bash_profile text eol=lf
+.bash_prompt text eol=lf
+.bashrc text eol=lf
+.exports text eol=lf
+.functions text eol=lf
+.gitconfig text eol=lf
+.gitignore text eol=lf
+.inputrc text eol=lf
+.vimrc text eol=lf
+
