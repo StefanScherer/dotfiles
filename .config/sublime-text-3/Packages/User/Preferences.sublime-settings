@@ -1,9 +1,12 @@
 {
-	"font_size": 12,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"highlight_modified_tabs": true
-
+  "font_size": 16,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "hot_exit": false,
+  "remember_open_files": false,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true
 }
