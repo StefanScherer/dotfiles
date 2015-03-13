@@ -108,4 +108,28 @@ function gitls {
   done
 }
 
+function eachdir {
+  if [ "$#" -lt 1  ]; then
+    echo "Usage: eachdir command ..."
+    echo "Starts a command for each directory found in current dir."
+    return
+  fi
+  if tput setaf 1 &> /dev/null; then
+    BOLD=$(tput bold)
+    RESET=$(tput sgr0)
+  else
+    BOLD=""
+    RESET="\033[m"
+  fi
+  for DIR in `ls --color=never`;
+  do
+    if [ -d $DIR/.git ]; then
+      echo $BOLD"Entering "$DIR$RESET
+      pushd $DIR >/dev/null
+      "$@"
+      popd >/dev/null
+    fi
+  done
+}
+
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }

@@ -40,6 +40,7 @@ sync.sh [--all|-a] [--force|-f]
 * **....**: three dirs up
 * **.....**: four dirs up
 * **~**: go into users home directory
+* **eachdir**: start a command for all sub directories
 * **fuck**: repeat last command with `sudo` ;-)
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
 * **gitcloneall**: clone all repos of an organization or user
