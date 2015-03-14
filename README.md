@@ -69,6 +69,7 @@ sync.sh [--all|-a] [--force|-f]
 * **hosts**: edit your hosts file
 * **logvi logfile**: view a log file with relative times in gvim
 * **solarize**: change between **dark** and **light** in terminal
+* **ssh-me**: copy my SSH key to remote machine and install my dotfiles there
 
 ### Atom
 

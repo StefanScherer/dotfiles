@@ -133,3 +133,8 @@ function eachdir {
 }
 
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ; }
+
+function ssh-me() {
+  ssh-copy-id $@
+  ssh $@ "mkdir -p code && cd code && git clone https://github.com/StefanScherer/dotfiles && cd dotfiles && ./sync.sh -f"
+}
