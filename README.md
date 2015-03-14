@@ -40,6 +40,8 @@ sync.sh [--all|-a] [--force|-f]
 * **....**: three dirs up
 * **.....**: four dirs up
 * **~**: go into users home directory
+* **docker-rm-all**: delete all old docker containers
+* **docker-rmi-all**: delete all old docker images
 * **eachdir**: start a command for all sub directories
 * **fuck**: repeat last command with `sudo` ;-)
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
