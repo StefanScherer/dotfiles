@@ -1,4 +1,5 @@
 'packages': [
+  'atom-beautifier'
   'autocomplete-plus'
   'cucumber'
   'editorconfig'
@@ -62,6 +63,7 @@
   'language-c'
   'language-clojure'
   'language-coffee-script'
+  'language-csharp'
   'language-css'
   'language-gfm'
   'language-git'
