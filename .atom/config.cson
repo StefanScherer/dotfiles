@@ -1,18 +1,22 @@
-'exception-reporting':
-  'userId': '05162874-e0c6-bfb2-ad47-5bead3da1b69'
-'release-notes':
-  'viewedVersion': '0.89.0'
-'welcome':
-  'showOnStartup': false
-'metrics':
-  'userId': '342ad9a99899ef9e89529602774ab0d4c23d7257'
-'core':
-  'ignoredNames': [
-    '.git'
-    '.svn'
-    '.DS_Store'
-  ]
-'editor':
-  'fontSize': 15
-  'invisibles': {}
-  'normalizeIndentOnPaste': false
+"*":
+  "exception-reporting":
+    userId: "05162874-e0c6-bfb2-ad47-5bead3da1b69"
+  "release-notes":
+    viewedVersion: "0.89.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "342ad9a99899ef9e89529602774ab0d4c23d7257"
+  core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    invisibles: {}
+    normalizeIndentOnPaste: false
