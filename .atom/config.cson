@@ -20,3 +20,4 @@
   editor:
     invisibles: {}
     normalizeIndentOnPaste: false
+    autoIndentOnPaste: false
