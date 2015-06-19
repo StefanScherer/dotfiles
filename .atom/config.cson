@@ -13,11 +13,10 @@
       ".svn"
       ".DS_Store"
     ]
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
   editor:
     invisibles: {}
     normalizeIndentOnPaste: false
     autoIndentOnPaste: false
+    fontSize: 17
+  tabs:
+    usePreviewTabs: true
