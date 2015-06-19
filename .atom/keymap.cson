@@ -20,3 +20,6 @@
 '.autocomplete-plus input.hidden-input':
   'tab': 'unset!'
   'enter': 'autocomplete-plus:confirm'
+
+'.platform-darwin':
+  'ctrl-1': 'tree-view:toggle'
