@@ -17,6 +17,6 @@
     invisibles: {}
     normalizeIndentOnPaste: false
     autoIndentOnPaste: false
-    fontSize: 17
+    fontSize: 19
   tabs:
     usePreviewTabs: true
