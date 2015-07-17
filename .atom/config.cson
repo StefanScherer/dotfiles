@@ -17,6 +17,8 @@
     invisibles: {}
     normalizeIndentOnPaste: false
     autoIndentOnPaste: false
-    fontSize: 17
+    fontSize: 18
+    showIndentGuide: true
   tabs:
     usePreviewTabs: true
+  "go-plus": {}
