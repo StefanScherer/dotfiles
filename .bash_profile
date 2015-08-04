@@ -38,7 +38,7 @@ export LANG="en_US"
 
 source ~/bin/git-completion.bash
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh && nvm use 0.12 # This loads NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
