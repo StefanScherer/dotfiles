@@ -38,7 +38,13 @@ export LANG="en_US"
 
 source ~/bin/git-completion.bash
 
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+if [[ "$OSTYPE" == "darwin"*  ]]; then
+  # Mac OSX
+  export NVM_DIR=~/.nvm
+  source $(brew --prefix nvm)/nvm.sh
+else
+  [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+fi
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
