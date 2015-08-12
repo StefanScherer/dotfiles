@@ -82,7 +82,7 @@ alias mergefork='git merge upstream/master'
 alias fuck='sudo $(history -p \!\!)'
 
 # docker
-alias docker-rm-all='docker rm $(docker ps -aq)'
+alias docker-rm-all='docker rm -vf $(docker ps -aq)'
 alias docker-rmi-all='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
 
 alias passhypriot='PASSWORD_STORE_DIR=~/code/hypriot/pass/password-store/ pass'
