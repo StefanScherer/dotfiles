@@ -41,6 +41,8 @@
 	insteadOf = "gist:"
 [url "git@bicketbucket.com:"]
 	pushInsteadOf = "https://bitbucket.org/"
+[url "git@github.com-work:plossys/"]
+	insteadOf = "git@github.com:plossys/"
 [user]
 	name = Stefan Scherer
 	email = scherer_stefan@icloud.com
