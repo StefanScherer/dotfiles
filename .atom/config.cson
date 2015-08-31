@@ -21,4 +21,6 @@
     showIndentGuide: true
   tabs:
     usePreviewTabs: true
-  "go-plus": {}
+  "go-plus":
+    goPath: "/Users/stefan/go"
+    showPanel: false
