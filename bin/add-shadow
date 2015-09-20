@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# convert $1 \( +clone -background black -shadow 80x20+0+15 \) +swap -background transparent -layers merge +repage "$1-shadow.png"
-convert $1 \( +clone -background black -shadow 120x30+0+20 \) +swap -background transparent -layers merge +repage "$1-shadow.png"
+convert "$1" \( +clone -background grey25 -shadow 80x40+5+30 \) +swap -background transparent -layers merge +repage "$1-shadow.png"
