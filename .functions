@@ -48,7 +48,7 @@ function gitall {
   fi
   dirs="."
   for DIR in `find $dirs -name ".git"`; do
-    echo $BOLD"Entering "$DIR/..$RESET
+    echo $BOLD"Entering $(dirname $DIR)"$RESET
     pushd $DIR/.. >/dev/null
     git "$@"
     popd >/dev/null
