@@ -46,14 +46,12 @@ function gitall {
     BOLD=""
     RESET="\033[m"
   fi
-  for DIR in `ls --color=never`;
-  do
-    if [ -d $DIR/.git ]; then
-      echo $BOLD"Entering "$DIR$RESET
-      pushd $DIR >/dev/null
-      git "$@"
-      popd >/dev/null
-    fi
+  dirs="."
+  for DIR in `find $dirs -name ".git"`; do
+    echo $BOLD"Entering "$DIR/..$RESET
+    pushd $DIR/.. >/dev/null
+    git "$@"
+    popd >/dev/null
   done
 }
 
