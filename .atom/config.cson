@@ -24,3 +24,5 @@
   "go-plus":
     goPath: "/Users/stefan/go"
     showPanel: false
+  "linter-eslint":
+    useGlobalEslint: true
