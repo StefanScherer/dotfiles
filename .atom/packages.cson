@@ -48,6 +48,8 @@
   'keybinding-resolver'
   'line-ending-selector'
   'link'
+  'linter'
+  'linter-eslint'
   'markdown-preview'
   'metrics'
   'notifications'
