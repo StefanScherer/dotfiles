@@ -40,6 +40,7 @@ sync.sh [--all|-a] [--force|-f]
 * **....**: three dirs up
 * **.....**: four dirs up
 * **~**: go into users home directory
+* **dm**: docker-machine shortener: `dm dev` or `dm start dev` or `dm ip dev` ...
 * **docker-rm-all**: delete all old docker containers
 * **docker-rmi-all**: delete all old docker images
 * **eachdir**: start a command for all sub directories

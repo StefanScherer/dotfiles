@@ -51,3 +51,8 @@ fi
 
 # GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# docker-machine
+#if [ -f "$GOPATH/bin/docker-machine"  ] || [ -f "/usr/local/bin/docker-machine" ]; then
+#    eval $(docker-machine env dev)
+#fi

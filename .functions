@@ -136,3 +136,9 @@ function ssh-me() {
   ssh-copy-id $@
   ssh $@ "mkdir -p code && cd code && git clone https://github.com/StefanScherer/dotfiles && cd dotfiles && ./sync.sh -f"
 }
+
+function dm() {
+  commands=(env inspect ip kill ls regenerate-certs restart rm ssh scp start status stop upgrade url help)
+  case "${commands[@]}" in  *"$1"*) docker-machine $* ; return ;; esac
+  eval $(docker-machine env $1)
+}
