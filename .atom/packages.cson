@@ -3,6 +3,7 @@
   'cucumber'
   'editorconfig'
   'feedback'
+  'file-types'
   'go-plus'
   'language-batch'
   'language-docker'
