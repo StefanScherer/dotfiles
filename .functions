@@ -57,7 +57,7 @@ function gitall {
 
 function gitls {
   if [ "$#" -lt 1  ]; then
-    dirs="."
+    dirs="*"
   else
     dirs=$*
   fi
@@ -82,7 +82,7 @@ function gitls {
     RESET="\033[m"
   fi
 
-  for d in `find $dirs -name ".git"`; do
+  for d in $(ls -1d $dirs/.git); do
     # check if we're in a git repo
     git --git-dir=$d --work-tree=$d/.. rev-parse --is-inside-work-tree &>/dev/null # || return
 
