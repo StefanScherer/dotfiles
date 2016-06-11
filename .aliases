@@ -87,3 +87,11 @@ alias docker-rmi-all='docker rmi -f $(docker images | grep "<none>" | awk "{prin
 alias dps='docker ps --format="table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
 
 alias passhypriot='PASSWORD_STORE_DIR=~/code/hypriot/pass/password-store/ pass'
+
+# Language specific Atom
+function a {
+ LANG=en_US.UTF-8 atom $@
+}
+function ade {
+ LANG=de_DE.UTF-8 atom $@
+}
