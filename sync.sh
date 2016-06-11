@@ -1,12 +1,12 @@
 #!/bin/bash
-cd "$(dirname "$0")"
+cd "$(dirname "$0")" || exit 5
 git pull
 function doIt() {
   if [ ! -d ~/code ]; then
     mkdir ~/code
   fi
   if [ ! -d ~/code/z ]; then
-    git clone https://github.com/rupa/z.git ~/code/z 
+    git clone https://github.com/rupa/z.git ~/code/z
   fi
   if [ ! -d ~/.vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -27,11 +27,11 @@ function doIt() {
   ~/.solarized/solarize.sh light
 
   rsync --exclude ".git/" --exclude "images/" --exclude "sync.sh" --exclude "README.md" --exclude "npm-install.sh" --exclude "LICENSE.txt" --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" --exclude "fetch-atom-prefs.sh" -av . ~
-  if which vim 2>&1 >/dev/null; then
+  if which vim >/dev/null 2>&1; then
     vim +BundleInstall +qall
   fi
   if [ ! -d ~/.atom/packages/parcel ]; then
-    if which apm 2>&1 >/dev/null; then
+    if which apm >/dev/null 2>&1; then
       apm install parcel
     fi
   fi
