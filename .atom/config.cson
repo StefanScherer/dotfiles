@@ -5,9 +5,11 @@
       ".svn"
       ".DS_Store"
     ]
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
   editor:
     autoIndentOnPaste: false
-    fontSize: 18
+    fontSize: 16
     invisibles: {}
     normalizeIndentOnPaste: false
     showIndentGuide: true
