@@ -1,12 +1,16 @@
 "*":
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
   core:
+    disabledPackages: [
+      "linter-eslint"
+    ]
     ignoredNames: [
       ".git"
       ".svn"
       ".DS_Store"
     ]
-  "autocomplete-plus":
-    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+    telemetryConsent: "limited"
   editor:
     autoIndentOnPaste: false
     fontSize: 16
@@ -21,6 +25,8 @@
   "go-plus":
     goPath: "/Users/stefan/go"
     showPanel: false
+  linter:
+    errorPanelHeight: 24
   "linter-eslint":
     useGlobalEslint: true
   "linter-shellcheck":
