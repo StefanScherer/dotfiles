@@ -1,0 +1,7 @@
+DavidAnson.vscode-markdownlint
+EditorConfig.EditorConfig
+PeterJausovec.vscode-docker
+akamud.vscode-theme-onedark
+ms-vscode.PowerShell
+ms-vscode.cpptools
+peterjuras.fontsize-shortcuts
