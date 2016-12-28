@@ -1,0 +1,20 @@
+#!/bin/bash
+set -x
+
+# get the router address
+ROUTER=$(netstat -r -f inet | grep ^default* | awk '{ print $2  }')
+
+# get the first three octets of the local network
+LOCAL=$(echo $ROUTER | awk -F. '{print $1,$2,$3}' OFS=".")
+NOTSOLOCAL=192.168.2
+
+echo "Running nmap on ${LOCAL}.0/24 ..."
+nmap -sP ${LOCAL}.0/24
+if [ ${LOCAL}!=${NOTSOLOCAL} ]; then
+  echo "Running nmap on ${NOTSOLOCAL}.0/24 ..."
+  nmap -sP ${NOTSOLOCAL}.0/24
+fi
+
+echo ""
+echo "List of all Raspberry Pi's:"
+arp -a | grep b8:27:eb 

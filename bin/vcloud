@@ -1,0 +1,42 @@
+#!/bin/bash
+
+debug=""
+if [ "$1" == "--debug" ]; then
+  shift
+  debug="-e VAGRANT_LOG=debug"
+fi
+
+image=plossys/vagrant-vcloud
+if [ "$1" == "--image" ]; then
+  shift
+  image=$1
+  shift
+fi
+
+if [ "$1" == "--vpn" ]; then
+  shift
+  docker run --rm -it $debug \
+    --cap-add NET_ADMIN \
+    -e "VPN_USER=$(pass seal-vpn-user)" \
+    -e "VPN_PWD=$(pass seal-vpn)" \
+    --add-host roecloud001.sealsystems.local:10.100.20.29 \
+    -v "$(pwd):/work" \
+    -v ~/.vagrant.d/Vagrantfile:/user/Vagrantfile \
+    "$image" "$@"
+else
+  if [ "$1" == "rdp" ]; then
+    address=$(docker run --rm -it $debug \
+      --add-host roecloud001.sealsystems.local:10.100.20.29 \
+      -v "$(pwd):/work" \
+      -v ~/.vagrant.d/Vagrantfile:/user/Vagrantfile \
+      "$image" "$@" 2>&1 | grep Address: | sed 's/.*Address: //')
+    echo "$*: $address"
+    open rdp://$address
+  else
+    docker run --rm -it $debug \
+      --add-host roecloud001.sealsystems.local:10.100.20.29 \
+      -v "$(pwd):/work" \
+      -v ~/.vagrant.d/Vagrantfile:/user/Vagrantfile \
+      "$image" "$@"
+  fi
+fi

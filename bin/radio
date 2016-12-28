@@ -1,0 +1,11 @@
+#!/bin/bash
+set -x
+#nmap -sP 192.168.1.0/24
+#ip=$(arp -a  | grep 0:e0: | awk '{match($0,/[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/); ip = substr($0,RSTART,RLENGTH); print ip}')
+ip=192.168.1.101
+
+if [ "$1" == "antenne" ]; then
+  printf "%s\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n" TAC 1 0 1 1 0 | nc $ip 23
+else
+  printf "%s\r\n" 1TP | nc $ip 23
+fi

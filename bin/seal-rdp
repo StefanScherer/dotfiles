@@ -1,0 +1,19 @@
+#!/bin/bash
+# usage: seal-rdp roenb014
+serverport=33389
+rdpuser=$(pass seal-rdp-user)
+echo When VPN connection is established, open your RDP client at 127.0.0.1:$serverport
+echo To close the VPN connection, press CTRL-C
+cat <<EOF >/tmp/seal-rdp.rdp
+drivestoredirect:s:*
+full address:s:127.0.0.1:$serverport
+prompt for credentials:i:1
+username:s:$rdpuser
+EOF
+sleep 8 && open /tmp/seal-rdp.rdp &
+docker run --rm -it \
+  --cap-add NET_ADMIN \
+  -e "VPN_USER=$(pass seal-vpn-user)" \
+  -e "VPN_PWD=$(pass seal-vpn)" \
+  -p $serverport:3389 \
+  plossys/barracuda connect "$@"
