@@ -5,9 +5,42 @@ rdpuser=$(pass seal-rdp-user)
 echo When VPN connection is established, open your RDP client at 127.0.0.1:$serverport
 echo To close the VPN connection, press CTRL-C
 cat <<EOF >/tmp/seal-rdp.rdp
-drivestoredirect:s:*
-full address:s:127.0.0.1:$serverport
+use redirection server name:i:0
+disable wallpaper:i:0
+disable themes:i:0
+disable menu anims:i:1
+remoteapplicationcmdline:s:
+audiocapturemode:i:0
+prompt for credentials on client:i:0
+remoteapplicationprogram:s:
+loadbalanceinfo:s:
+session bpp:i:32
+drivestoredirect:s:
+gatewayusagemethod:i:2
+authentication level:i:2
+desktopwidth:i:0
+desktopheight:i:0
+redirectclipboard:i:1
+redirectprinters:i:0
+autoreconnection enabled:i:1
+administrative session:i:0
+redirectsmartcards:i:0
+authoring tool:s:
+alternate shell:s:
+remoteapplicationmode:i:0
+disable full window drag:i:1
+gatewayusername:s:
+shell working directory:s:
+audiomode:i:0
+use multimon:i:0
+allow font smoothing:i:1
+connect to console:i:0
+gatewayhostname:s:
+disable cursor settings:i:0
+screen mode id:i:2
+full address:s:$address
 prompt for credentials:i:1
+drivestoredirect:s:*
 username:s:$rdpuser
 EOF
 sleep 8 && open /tmp/seal-rdp.rdp &
