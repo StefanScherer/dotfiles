@@ -48,3 +48,5 @@
 	email = scherer_stefan@icloud.com
 [push]
 	default = simple
+[commit]
+	gpgsign = true
