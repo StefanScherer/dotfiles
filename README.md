@@ -30,7 +30,7 @@ sync.sh [--all|-a] [--force|-f]
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
-* **vagrantd**: run vagrant in debug mode, live measure times in console, while capturing debug in logfile
+* **toggle**: toggle solarized dark/light theme in terminal
 * **z**: "z foo" - cd to most frecent dir matching foo
 
 ### Aliases
