@@ -40,10 +40,6 @@ sync.sh [--all|-a] [--force|-f]
 * **....**: three dirs up
 * **.....**: four dirs up
 * **~**: go into users home directory
-* **dm**: docker-machine shortener: `dm dev` or `dm start dev` or `dm ip dev` ...
-* **dps**: like `docker ps`, but with less columns
-* **docker-rm-all**: delete all old docker containers
-* **docker-rmi-all**: delete all old docker images
 * **eachdir**: start a command for all sub directories
 * **fuck**: repeat last command with `sudo` ;-)
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
@@ -72,6 +68,14 @@ sync.sh [--all|-a] [--force|-f]
 * **logvi logfile**: view a log file with relative times in gvim
 * **solarize**: change between **dark** and **light** in terminal
 * **ssh-me**: copy my SSH key to remote machine and install my dotfiles there
+
+### Docker
+
+* **dps**: like `docker ps`, but with less columns
+* **dm**: docker-machine shortener: `dm dev` or `dm start dev` or `dm ip dev` ...
+  * **dm dev**  is a shortcut for `eval $(docker-machine env dev)`
+  * also integrates my [windows-docker-machine](https://github.com/StefanScherer/windows-docker-machine)'s 2016, 1709 and insider using Vagrant to start/stop them
+  * also integrates my [docker-windows-azure](https://github.com/StefanScherer/docker-windows-azure) machines az2016 and az1709 using azure cli to start/stop them
 
 ### Atom
 
