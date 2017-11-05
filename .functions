@@ -137,8 +137,41 @@ function ssh-me() {
   ssh $@ "mkdir -p code && cd code && git clone https://github.com/StefanScherer/dotfiles && cd dotfiles && ./sync.sh -f"
 }
 
-function dm() {
+function dmhelper() {
   commands=(env inspect ip kill ls regenerate-certs restart rm ssh scp start status stop upgrade url help)
   case "${commands[@]}" in  *"$1"*) docker-machine $* ; return ;; esac
   eval $(docker-machine env $1)
+}
+
+function vg() {
+  pushd ~/code/windows-docker-machine
+  vagrant $*
+  popd
+}
+
+function vagrantdm() {
+  if [ "$1" == "start" ]; then vg up $2; return; fi
+  if [ "$1" == "restart" ]; then vg reload $2; return; fi
+  if [ "$1" == "stop" ]; then vg halt $2; return; fi
+  if [ "$1" == "rm" ]; then vg destroy $2 $3; return; fi
+  if [ "$1" == "status" ]; then vg status $2; return; fi
+  if [ "$1" == "rdp" ]; then vg rdp $2; return; fi
+  if [ "$1" == "regenerate-certs" ]; then vg provision $2; return; fi
+  dmhelper $*
+}
+
+function azuredm() {
+  if [ "$1" == "start" ]; then azure vm start $2 $2; return; fi
+  if [ "$1" == "restart" ]; then azure vm restart $2 $2; return; fi
+  if [ "$1" == "stop" ]; then azure vm stop $2 $2; return; fi
+  if [ "$1" == "status" ]; then azure vm show $2 $2; return; fi
+  dmhelper $*
+}
+
+function dm() {
+  vagrantmachines=(2016 1709 insider)
+  case "${vagrantmachines[@]}" in  *"${!#}"*) vagrantdm $* ; return ;; esac
+  azuremachines=(az2016 az1709)
+  case "${azuremachines[@]}" in  *"${!#}"*) azuredm $* ; return ;; esac
+  dmhelper $*
 }
