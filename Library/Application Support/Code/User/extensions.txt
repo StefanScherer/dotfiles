@@ -2,6 +2,9 @@ DavidAnson.vscode-markdownlint
 EditorConfig.EditorConfig
 PeterJausovec.vscode-docker
 akamud.vscode-theme-onedark
-ms-vscode.PowerShell
+akamud.vscode-theme-onelight
+formulahendry.docker-explorer
+fosshaas.fontsize-shortcuts
+lukehoban.Go
 ms-vscode.cpptools
-peterjuras.fontsize-shortcuts
+ms-vscode.PowerShell

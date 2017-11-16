@@ -1,5 +1,6 @@
 {
-    "window.zoomLevel": 0,
-    "terminal.integrated.fontSize": 18,
+    "window.zoomLevel": -1,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Atom One Dark",
     "editor.fontSize": 18
 }

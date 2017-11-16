@@ -1,10 +1,23 @@
 // Platzieren Sie Ihre Tastenzuordnungen in dieser Datei, um die Standardwerte zu überschreiben.
-[{
-    "key": "cmd+]",
-    "command": "fontshortcuts.increaseFontSize"
-},
-{
-    "key": "cmd+/",
-    "command": "fontshortcuts.decreaseFontSize"
-}
+[
+    {
+        "key": "cmd+[BracketRight]",
+        "command": "fontshortcuts.increaseEditorFontSize",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+0",
+        "command": "-fontshortcuts.increaseEditorFontSize",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+[BracketRight]",
+        "command": "fontshortcuts.increaseTerminalFontSize",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+cmd+0",
+        "command": "-fontshortcuts.increaseTerminalFontSize",
+        "when": "terminalFocus"
+    }
 ]
