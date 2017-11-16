@@ -27,5 +27,9 @@
     {
         "key": "shift+alt+t",
         "command": "-qtf.changeTheme"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "workbench.action.toggleSidebarVisibility"
     }
 ]
