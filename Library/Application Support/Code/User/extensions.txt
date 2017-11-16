@@ -5,6 +5,7 @@ akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
 formulahendry.docker-explorer
 fosshaas.fontsize-shortcuts
+jewsofhazard.quick-theme-flip
 lukehoban.Go
 ms-vscode.cpptools
 ms-vscode.PowerShell

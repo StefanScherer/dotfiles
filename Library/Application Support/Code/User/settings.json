@@ -1,6 +1,8 @@
 {
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Atom One Dark",
-    "editor.fontSize": 18
+    "editor.fontSize": 19,
+    "qtf.themeOne": "Atom One Dark",
+    "qtf.themeTwo": "Atom One Light"
 }

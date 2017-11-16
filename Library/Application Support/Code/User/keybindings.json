@@ -19,5 +19,13 @@
         "key": "shift+cmd+0",
         "command": "-fontshortcuts.increaseTerminalFontSize",
         "when": "terminalFocus"
+    },
+    {
+        "key": "f12",
+        "command": "qtf.changeTheme"
+    },
+    {
+        "key": "shift+alt+t",
+        "command": "-qtf.changeTheme"
     }
 ]
