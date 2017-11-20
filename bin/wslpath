@@ -112,7 +112,12 @@ done
 
 p=$(echo $last | sed -e 's|\\\+|/|g;s|/\+|/|g')
 
+if [ "$p" == "." ]; then
+  p=$(pwd)
+fi
+
 lxss=$(win_env LOCALAPPDATA)/lxss
+lxss=$(win_env LOCALAPPDATA)/Packages/CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc/LocalState
 if [ $subst_home = yes ] && [ $to_unix = no ]; then
   userprofile=$(win_env USERPROFILE)
   drive=${userprofile:0:1}
@@ -168,4 +173,3 @@ else
 fi
 
 echo $p
-
