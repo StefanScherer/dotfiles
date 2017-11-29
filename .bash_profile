@@ -18,6 +18,11 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+# WSL
+if [ -d /mnt/c ]; then
+  source ~/.bash_profile_wsl
+fi
+
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
@@ -56,12 +61,6 @@ fi
 #if [ -f "$GOPATH/bin/docker-machine"  ] || [ -f "/usr/local/bin/docker-machine" ]; then
 #    eval $(docker-machine env dev)
 #fi
-
-# WSL
-if [ -d /mnt/c ]; then
-  export DOCKER_HOST=tcp://127.0.0.1:2375
-  umask 022
-fi
 
 if [ -f "$HOME/code/azure-cli/az.completion" ]; then
   source "$HOME/code/azure-cli/az.completion"

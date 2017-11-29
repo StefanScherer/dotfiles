@@ -39,10 +39,12 @@ function doIt() {
   # Visual Studio Code
   if [ -f ./Library/Application\ Support/Code/User/extensions.txt ]; then
     extensions=$(cat ./Library/Application\ Support/Code/User/extensions.txt)
-    if which code >/dev/null 2>&1; then
-      for ext in $extensions; do
-        code --install-extension "$ext"
-      done
+    if [ ! -d /mnt/c ]; then
+      if which code >/dev/null 2>&1; then
+        for ext in $extensions; do
+          code --install-extension "$ext"
+        done
+      fi
     fi
   fi
 }
