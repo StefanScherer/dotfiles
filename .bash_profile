@@ -14,7 +14,7 @@ fi
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
-	[ -r "$file" ] && source "$file"
+  [ -r "$file" ] && source "$file"
 done
 unset file
 
@@ -59,11 +59,6 @@ fi
 
 # GVM
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-# docker-machine
-#if [ -f "$GOPATH/bin/docker-machine"  ] || [ -f "/usr/local/bin/docker-machine" ]; then
-#    eval $(docker-machine env dev)
-#fi
 
 if [ -f "$HOME/code/azure-cli/az.completion" ]; then
   source "$HOME/code/azure-cli/az.completion"
