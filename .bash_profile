@@ -20,7 +20,10 @@ unset file
 
 # WSL
 if [ -d /mnt/c ]; then
-  source ~/.bash_profile_wsl
+  for file in ~/.{bash_profile_wsl,aliases_wsl,functions_wsl}; do
+    [ -r "$file" ] && source "$file"
+  done
+  unset file
 fi
 
 # init z   https://github.com/rupa/z
