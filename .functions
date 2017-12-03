@@ -139,13 +139,22 @@ function ssh-me() {
 
 function dmhelper() {
   commands=(env inspect ip kill ls regenerate-certs restart rm ssh scp start status stop upgrade url help)
-  case "${commands[@]}" in  *"$1"*) docker-machine $* ; return ;; esac
-  eval $(docker-machine env $1)
+  if [ -d /mnt/c ]; then
+    case "${commands[@]}" in  *"$1"*) docker-machine.exe $* ; return ;; esac
+    eval $(docker-machine.exe env -shell bash $1 | sed 's/C://' | sed 's/\\/\//g')
+  else
+    case "${commands[@]}" in  *"$1"*) docker-machine $* ; return ;; esac
+    eval $(docker-machine env $1)
+  fi
 }
 
 function vg() {
   pushd ~/code/windows-docker-machine
-  vagrant $*
+  if [ -d /mnt/c ]; then
+    vagrant.exe $*
+  else
+    vagrant $*
+  fi
   popd
 }
 
