@@ -23,17 +23,14 @@ function doIt() {
   rsync --exclude ".git/" --exclude "images/" \
         --exclude "sync.sh" --exclude "README.md" \
         --exclude "npm-install.sh" --exclude "LICENSE.txt" \
-        --exclude ".gitkeep" --exclude "fetch-sublime-prefs.sh" \
+        --exclude ".gitkeep" --exclude ".gitconfig" --exclude "fetch-sublime-prefs.sh" \
         --exclude "fetch-atom-prefs.sh" -av . ~
-  if which vim >/dev/null 2>&1; then
-    vim +BundleInstall +qall
+  if [ ! -f ~/.gitconfig ]; then
+    cp .gitconfig ~/.gitconfig
   fi
 
-  # Atom
-  if [ ! -d ~/.atom/packages/parcel ]; then
-    if which apm >/dev/null 2>&1; then
-      apm install parcel
-    fi
+  if which vim >/dev/null 2>&1; then
+    vim +BundleInstall +qall
   fi
 
   # Visual Studio Code
