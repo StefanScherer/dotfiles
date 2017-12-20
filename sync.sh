@@ -11,7 +11,7 @@ function doIt() {
   fi
   if [ ! -d ~/.logs ]; then
     mkdir ~/.logs
-    chmod 600 ~/.logs
+    chmod 700 ~/.logs
   fi
   if [ ! -d ~/.vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
