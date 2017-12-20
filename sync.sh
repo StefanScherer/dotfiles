@@ -9,6 +9,10 @@ function doIt() {
   if [ ! -d ~/code/z ]; then
     git clone https://github.com/rupa/z.git ~/code/z
   fi
+  if [ ! -d ~/.logs ]; then
+    mkdir ~/.logs
+    chmod 600 ~/.logs
+  fi
   if [ ! -d ~/.vim/bundle/vundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   fi
