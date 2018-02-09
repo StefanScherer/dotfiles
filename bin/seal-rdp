@@ -47,6 +47,6 @@ sleep 8 && open /tmp/seal-rdp.rdp &
 docker run --rm -it \
   --cap-add NET_ADMIN \
   -e "VPN_USER=$(pass seal-vpn-user)" \
-  -e "VPN_PWD=$(pass seal-vpn)" \
+  -e "VPN_PWD=$(pass seal-vpn-pwd)" \
   -p $serverport:3389 \
-  plossys/barracuda connect "$@"
+  plossys/barracuda:a35f4b63826cef74e8d7c9dd81cd23961a8df1a5 connect "$@"

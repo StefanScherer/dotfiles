@@ -86,6 +86,7 @@ alias fuck='sudo $(history -p \!\!)'
 alias docker-rm-all='docker rm -vf $(docker ps -aq)'
 alias docker-rmi-all='docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")'
 alias dps='docker ps --format="table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Names}}"'
+alias mq='docker run --rm mplatform/mquery'
 
 alias passhypriot='PASSWORD_STORE_DIR=~/code/hypriot/pass/password-store/ pass'
 
