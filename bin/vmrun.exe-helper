@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ "$1" == "list"  ]; then
+  "/mnt/c/Program Files (x86)/VMware/VMware Workstation/vmrun.exe" list | sed 's/C://' | sed 's/\\/\//g'
+else
+  "/mnt/c/Program Files (x86)/VMware/VMware Workstation/vmrun.exe" $*
+fi
