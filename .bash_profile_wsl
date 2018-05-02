@@ -12,6 +12,7 @@ if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
 fi
 
 eval $(gpg-agent --daemon)
+export GPG_TTY=$(tty)
 
 umask 022
 export _Z_NO_RESOLVE_SYMLINKS=1
