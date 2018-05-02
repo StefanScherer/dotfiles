@@ -1,7 +1,7 @@
 # Alias some Windows binaries to be used in WSL
 alias docker-machine=docker-machine.exe
 # docker cli is installed inside WSL, so no alias here
-alias vagrant=vagrant.exe
 alias hub=hub.exe
 alias e=explorer.exe
 alias notepad=notepad.exe
+alias packer=packer.exe
