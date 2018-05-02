@@ -11,7 +11,9 @@ if [ "$(ssh-add -l)" == "The agent has no identities." ]; then
     ssh-add
 fi
 
-eval $(gpg-agent --daemon)
+if [ -z "$(pgrep gpg-agent)"  ]; then
+  eval $(gpg-agent --daemon)
+fi
 export GPG_TTY=$(tty)
 
 umask 022
