@@ -33,6 +33,11 @@ function doIt() {
     cp .gitconfig ~/.gitconfig
   fi
 
+  if [ -d /mnt/c ]; then
+    echo Copy WSL vmrun helper script
+    sudo cp bin/vmrun.exe-helper "/usr/bin/C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe"
+  fi
+
   if which vim >/dev/null 2>&1; then
     vim +BundleInstall +qall
   fi
