@@ -150,11 +150,7 @@ function dmhelper() {
 
 function vg() {
   pushd ~/code/windows-docker-machine
-  if [ -d /mnt/c ]; then
-    vagrant.exe $*
-  else
-    vagrant $*
-  fi
+  vagrant $*
   popd
 }
 
