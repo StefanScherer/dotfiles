@@ -31,6 +31,7 @@ sync.sh [--all|-a] [--force|-f]
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
 * **toggle**: toggle solarized dark/light theme in terminal
+* **whoseport**: Who is running that port?
 * **z**: "z foo" - cd to most frecent dir matching foo
 
 ### Aliases

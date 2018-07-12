@@ -180,3 +180,7 @@ function dm() {
   case "${azuremachines[@]}" in  *"${!#}"*) azuredm $* ; return ;; esac
   dmhelper $*
 }
+
+function whoseport() {
+  lsof -i ":$1" | grep LISTEN
+}
