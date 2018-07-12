@@ -39,7 +39,7 @@
     tabSizing: "Even"
   "prettier-atom":
     formatOnSaveOptions:
-      enabled: true
+      enabled: false
     prettierOptions:
       singleQuote: true
     useEslint: true
