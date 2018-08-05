@@ -133,7 +133,7 @@ The following packages will be installed by Package Control
 The simplest way to setup a new Mac box is to download and run the `setup-mac` script.
 
 ```
-curl https://raw.githubusercontent.com/StefanScherer/dotfiles/master/setup-mac | sh
+curl https://raw.githubusercontent.com/StefanScherer/dotfiles/master/setup-mac | bash
 ```
 
 check_macos_updated
@@ -152,6 +152,7 @@ install_brew_packages
 Things you have to do manually
 
 * Run `SizeUp` and enter the license
+* Insert your Vagrant VMware license
 
 # Licensing
 Copyright (c) 2014 Stefan Scherer

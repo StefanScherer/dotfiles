@@ -63,6 +63,7 @@ function install_solarized_profiles() {
     open Solarized\ Light.terminal
   fi
 }
+
 # Main
 
 check_macos_updated
