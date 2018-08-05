@@ -4,7 +4,6 @@ docker
 handbrake
 kap
 nosleep
-real-vnc
 sizeup
 tunnelblick
 vagrant
