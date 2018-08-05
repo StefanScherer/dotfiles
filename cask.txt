@@ -1,0 +1,14 @@
+atom
+disk-inventory-x
+docker
+handbrake
+kap
+nosleep
+real-vnc
+sizeup
+tunnelblick
+vagrant
+vagrant-vmware-utility
+visual-studio-code
+wireshark
+xquartz
