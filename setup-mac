@@ -6,7 +6,7 @@ function check_macos_updated() {
   echo "Checking if macOS is up to date..."
   if [[ "$(sudo softwareupdate -l 2>&1)" != *"No new software available"* ]]; then
     echo "Updating macOS"
-    echo sudo softwareupdate -i -a
+    sudo softwareupdate -i -a
     echo "Reboot your machine now and run this script again afterwards."
     exit 0
   else
