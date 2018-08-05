@@ -49,7 +49,9 @@ source ~/bin/git-completion.bash
 if [[ "$OSTYPE" == "darwin"*  ]]; then
   # Mac OSX
   export NVM_DIR=~/.nvm
-  source $(brew --prefix nvm)/nvm.sh
+  if [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
+    source $(brew --prefix nvm)/nvm.sh
+  fi
 else
   [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 fi
