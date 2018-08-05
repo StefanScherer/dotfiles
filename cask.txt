@@ -3,11 +3,10 @@ disk-inventory-x
 docker
 handbrake
 kap
-nosleep
 sizeup
 tunnelblick
 vagrant
 vagrant-vmware-utility
 visual-studio-code
+vmware-fusion
 wireshark
-xquartz

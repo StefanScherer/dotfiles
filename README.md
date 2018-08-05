@@ -128,6 +128,31 @@ The following packages will be installed by Package Control
 * `,ss`: strip trailing white space
 * `,e`: format JavaScript code with esformatter (`npm install -g esformatter`)
 
+# Setup a new Mac box
+
+The simplest way to setup a new Mac box is to download and run the `setup-mac` script.
+
+```
+curl https://raw.githubusercontent.com/StefanScherer/dotfiles/master/setup-mac | sh
+```
+
+check_macos_updated
+install_brew
+install_dotfiles
+install_solarized_profiles
+install_brew_packages
+
+1. It will run all macOS updates before it installs anything. Maybe you have to run it again after installing updates and rebooting the machine.
+1. It install `brew`
+1. It clones this dotfiles repo and executes the `sync.sh` script to install/update it
+1. It installs the Solarized terminal profiles
+1. It installs all brew packages in `brew.txt`
+1. It installs all brew casks in `cask.txt`
+
+Things you have to do manually
+
+* Run `SizeUp` and enter the license
+
 # Licensing
 Copyright (c) 2014 Stefan Scherer
 

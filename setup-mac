@@ -1,0 +1,73 @@
+#!/bin/bash
+set -e
+
+# Enforce that all updates are installed before we begin
+function check_macos_updated() {
+  echo "Checking if macOS is up to date..."
+  if [[ "$(sudo softwareupdate -l 2>&1)" != *"No new software available"* ]]; then
+    echo "Updating macOS"
+    echo sudo softwareupdate -i -a
+    echo "Reboot your machine now and run this script again afterwards."
+    exit 0
+  else
+    echo "This macOS is up to date."
+  fi
+}
+
+# Install brew and XCode Command Line Tools
+function install_brew() {
+  if ! command -v brew > /dev/null 2>&1; then
+    echo "Installing Brew..."
+    printf "\n\n" | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew analytics off
+  else
+    echo "Brew already installed."
+  fi
+}
+
+function install_dotfiles() {
+  mkdir -p ~/code
+  cd ~/code
+  if [ ! -d ~/code/dotfiles ]; then
+    echo "Cloning dotfiles repo"
+    git clone https://github.com/StefanScherer/dotfiles
+  else
+    echo "Updating dotfiles repo"
+  fi
+  cd ~/code/dotfiles
+  ./sync.sh -f
+}
+
+function install_brew_packages() {
+  echo "Install new taps from brew.txt"
+  comm -23 \
+    <(sort ~/code/dotfiles/brew.txt) \
+    <(brew ls --full-name) \
+    | xargs brew install
+  
+  echo "Install new casks from cask.txt"
+  comm -23 \
+    <(sort ~/code/dotfiles/cask.txt) \
+    <(brew cask ls) \
+    | xargs brew cask install
+}
+
+function install_solarized_profiles() {
+  mkdir -p ~/code
+  cd ~/code
+  if [ ! -d ~/code/osx-terminal.app-colors-solarized ]; then
+    echo "Cloning osx-terminal.app-colors-solarized repo"
+    git clone https://github.com/tomislav/osx-terminal.app-colors-solarized
+    cd osx-terminal.app-colors-solarized
+    open Solarized\ Dark.terminal
+    open Solarized\ Light.terminal
+  fi
+}
+# Main
+
+check_macos_updated
+install_brew
+install_dotfiles
+install_solarized_profiles
+install_brew_packages
+
