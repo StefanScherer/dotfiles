@@ -42,13 +42,13 @@ function install_brew_packages() {
   mode=$1
   echo "Install new taps from brew.txt"
   comm -23 \
-    <(sort "~/code/dotfiles/brew.txt") \
+    <(sort ~/code/dotfiles/brew.txt) \
     <(brew ls --full-name) \
     | xargs brew install
   
   echo "Install new casks from cask-$mode.txt"
   comm -23 \
-    <(sort "~/code/dotfiles/cask-$mode.txt") \
+    <(sort ~/code/dotfiles/cask-$mode.txt) \
     <(brew cask ls) \
     | xargs brew cask install
 }
