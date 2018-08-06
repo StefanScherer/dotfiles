@@ -39,15 +39,16 @@ function install_dotfiles() {
 }
 
 function install_brew_packages() {
+  mode=$1
   echo "Install new taps from brew.txt"
   comm -23 \
-    <(sort ~/code/dotfiles/brew.txt) \
+    <(sort "~/code/dotfiles/brew.txt") \
     <(brew ls --full-name) \
     | xargs brew install
   
-  echo "Install new casks from cask.txt"
+  echo "Install new casks from cask-$mode.txt"
   comm -23 \
-    <(sort ~/code/dotfiles/cask.txt) \
+    <(sort "~/code/dotfiles/cask-$mode.txt") \
     <(brew cask ls) \
     | xargs brew cask install
 }
@@ -131,7 +132,8 @@ function set_defaults() {
 
 #check_macos_updated
 install_brew
-install_brew_packages
+install_brew_packages minimal
 install_dotfiles
 install_terminal_profiles
 set_defaults
+install_brew_packages full
