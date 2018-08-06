@@ -19,6 +19,10 @@ function doIt() {
 
   rsync --exclude ".git/" --exclude "images/" \
         --exclude "sync.sh" --exclude "README.md" \
+        --exclude "brew.txt" --exclude "atom-config.cson" \
+        --exclude "cask-minimal.txt" --exclude "cask-full.txt" \
+        --exclude "setup-mac" --exclude "plist" \
+        --exclude "fetch-code-prefs.sh" --exclude "install-atom-plugins.sh" \
         --exclude "npm-install.sh" --exclude "LICENSE.txt" \
         --exclude ".gitkeep" --exclude ".gitconfig" --exclude "fetch-sublime-prefs.sh" \
         --exclude "fetch-atom-prefs.sh" -av . ~
