@@ -128,8 +128,7 @@ function set_defaults() {
 
 #check_macos_updated
 install_brew
+install_brew_packages
 install_dotfiles
 install_terminal_profiles
 set_defaults
-#install_brew_packages
-

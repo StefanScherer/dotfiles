@@ -46,6 +46,12 @@ function doIt() {
       fi
     fi
   fi
+
+  # Atom
+  if command -v apm > /dev/null 2>&1; then
+    echo "Installing Atom plugins..."
+    ~/code/dotfiles/install-atom-plugins.sh
+  fi
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
