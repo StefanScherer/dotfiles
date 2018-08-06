@@ -65,10 +65,58 @@ function install_solarized_profiles() {
 }
 
 function set_defaults() {
-  defaults write com.apple.AppleMultitouchTrackpad Clicking 1
-  defaults write com.apple.AppleMultitouchTrackpad Dragging 1
-  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking 1
-  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging 1
+
+  ###############################################################################
+  # Screen                                                                      #
+  ###############################################################################
+
+  # Require password immediately after sleep or screen saver begins
+  defaults write com.apple.screensaver askForPassword -int 1
+  defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+  # Save screenshots to the desktop
+  defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+  # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+  defaults write com.apple.screencapture type -string "png"
+
+  ###############################################################################
+  # Trackpad                                                                  #
+  ###############################################################################
+
+  # Trackpad: enable tap to click for this user and for the login screen
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+  defaults write com.apple.AppleMultitouchTrackpad Dragging -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Dragging -bool true
+
+  # Hot corners
+  # Possible values:
+  #  0: no-op
+  #  2: Mission Control
+  #  3: Show application windows
+  #  4: Desktop
+  #  5: Start screen saver
+  #  6: Disable screen saver
+  #  7: Dashboard
+  # 10: Put display to sleep
+  # 11: Launchpad
+  # 12: Notification Center
+  # Top left screen corner → Mission Control
+
+  defaults write com.apple.dock wvous-tr-corner -int 5
+
+  ###############################################################################
+  # SizeUp.app                                                                  #
+  ###############################################################################
+
+  # Start SizeUp at login
+  defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
+
+  # Don’t show the preferences window on next start
+  defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 }
 
 # Main
