@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ "$(osascript -e 'tell application "Terminal" to get background color of current settings of selected tab of front window')" =~ "64842" ]]; then
-  osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "Solarized Dark")'
+  osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "Solarized Dark xterm-256color")'
 else
-  osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "Solarized Light")'
+  osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "Solarized Light xterm-256color")'
 fi
