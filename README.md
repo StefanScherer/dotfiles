@@ -30,7 +30,7 @@ sync.sh [--all|-a] [--force|-f]
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
-* `Fn + F12`: toggle solarized dark/light theme in terminal
+* `Fn + F12`: toggle One Dark/Light theme in terminal
 * **whoseport**: Who is running that port?
 * **z**: "z foo" - cd to most frecent dir matching foo
 
@@ -107,8 +107,6 @@ The following packages will be installed by Package Control
 * **GoSublime**
 * **Markdown Preview**
 * **PowerShell**
-* **Solarized Color Scheme**
-* **Solarized Toggle**
 
 
 ### Sublime commands
@@ -119,7 +117,6 @@ The following packages will be installed by Package Control
 
 * installs **Vundle** and some other stuff
 * **EditorConfig**
-* **vim-colors-solarized**
 
 ### VIM commands
 
@@ -138,13 +135,13 @@ curl https://raw.githubusercontent.com/StefanScherer/dotfiles/master/setup-mac |
 check_macos_updated
 install_brew
 install_dotfiles
-install_solarized_profiles
+install_terminal_profiles
 install_brew_packages
 
 1. It will run all macOS updates before it installs anything. Maybe you have to run it again after installing updates and rebooting the machine.
 1. It install `brew`
 1. It clones this dotfiles repo and executes the `sync.sh` script to install/update it
-1. It installs the Solarized terminal profiles
+1. It installs the One Dark/Light terminal profiles
 1. It installs all brew packages in `brew.txt`
 1. It installs all brew casks in `cask.txt`
 
