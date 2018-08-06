@@ -130,10 +130,10 @@ function set_defaults() {
 
 # Main
 
-#check_macos_updated
+check_macos_updated
 install_brew
 install_brew_packages minimal
 install_dotfiles
 install_terminal_profiles
 set_defaults
-#install_brew_packages full
+install_brew_packages full
