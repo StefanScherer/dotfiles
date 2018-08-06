@@ -117,6 +117,9 @@ function set_defaults() {
   # SizeUp.app                                                                  #
   ###############################################################################
 
+  # Own key bindings
+  defaults import com.irradiatedsoftware.SizeUp ~/code/dotfiles/plist/sizeup.plist
+
   # Start SizeUp at login
   defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
 
