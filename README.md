@@ -30,7 +30,7 @@ sync.sh [--all|-a] [--force|-f]
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
 * **syncfork**: fetch from upstream and merge master branch
-* **toggle**: toggle solarized dark/light theme in terminal
+* `Fn + F12`: toggle solarized dark/light theme in terminal
 * **whoseport**: Who is running that port?
 * **z**: "z foo" - cd to most frecent dir matching foo
 
@@ -67,7 +67,6 @@ sync.sh [--all|-a] [--force|-f]
 * **git undo-commit**: undo last commit, as it says
 * **hosts**: edit your hosts file
 * **logvi logfile**: view a log file with relative times in gvim
-* **solarize**: change between **dark** and **light** in terminal
 * **ssh-me**: copy my SSH key to remote machine and install my dotfiles there
 
 ### Docker
