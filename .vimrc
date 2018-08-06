@@ -25,7 +25,7 @@ set diffopt+=iwhite " Ignore whitespace changes (focus on code changes)
 set encoding=utf-8 nobomb " BOM often causes trouble
 set esckeys " Allow cursor keys in insert mode.
 set expandtab " Expand tabs to spaces
-set foldcolumn=4 " Column to show folds
+"set foldcolumn=4 " Column to show folds
 set foldenable
 set foldlevel=2
 " set foldlevelstart=2 " Sets `foldlevel` when editing a new buffer
@@ -66,7 +66,7 @@ set scrolloff=3 " Start scrolling three lines before horizontal border of window
 set shiftwidth=2 " The # of spaces for indenting.
 set shortmess=atI " Don't show the intro message when starting vim.
 set showmode " Show the current mode.
-set showtabline=2 " Always show tab bar.
+"set showtabline=2 " Always show tab bar.
 set sidescrolloff=3 " Start scrolling three columns before vertical border of window.
 set smartcase " Ignore 'ignorecase' if search patter contains uppercase characters.
 set smarttab " At start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces.
@@ -244,7 +244,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " Bundle 'scrooloose/nerdtree'
 " Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'altercation/vim-colors-solarized'
+" Bundle 'altercation/vim-colors-solarized'
+
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'jelera/vim-javascript-syntax'
 if filereadable("~/.vim/bundle/YouCompleteMe/install.sh")
@@ -260,6 +261,7 @@ Bundle 'editorconfig/editorconfig-vim'
 " execute pathogen#infect()
 filetype plugin indent on
 
+:highlight LineNr ctermfg=grey
 let g:nerdtree_tabs_open_on_gui_startup = 0
 " autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
