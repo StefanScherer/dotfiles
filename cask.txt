@@ -3,6 +3,7 @@ disk-inventory-x
 docker
 handbrake
 kap
+microsoft-office
 sizeup
 tunnelblick
 vagrant
