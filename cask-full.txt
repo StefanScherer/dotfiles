@@ -11,8 +11,8 @@ skitch
 slack
 tunnelblick
 vagrant
-vmware-fusion
 vagrant-manager
 vagrant-vmware-utility
 visual-studio-code
+vmware-fusion
 wireshark
