@@ -126,6 +126,8 @@ function set_defaults() {
 
   # Don’t show the preferences window on next start
   defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+
+  # sudo osascript -e 'tell application "System Events" to set require password to wake of security preferences to true'
 }
 
 function usage()
@@ -142,7 +144,7 @@ OPTIONS:
   --full|-f       Install all brew packages and casks defined in cask-full.txt
   --dotfiles|-d   Install dotfiles repo or update it
   --defaults|-D   Install default user settings
-  --termina|-t    Install terminal profile
+  --terminal|-t   Install terminal profile
 
 Without any option it runs the complete setup.
 EOF
