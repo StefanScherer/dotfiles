@@ -127,6 +127,15 @@ function set_defaults() {
   # Don’t show the preferences window on next start
   defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
+  # Disable auto corrections
+  defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+  defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+  defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+  defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+  defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+  defaults write NSGlobalDomain NSAutomaticTextCompletionEnabled -bool false
+  defaults write com.apple.Safari WebAutomaticSpellingCorrectionEnabled -bool false
+
   # sudo osascript -e 'tell application "System Events" to set require password to wake of security preferences to true'
 }
 
