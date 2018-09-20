@@ -1,11 +1,14 @@
-DavidAnson.vscode-markdownlint
 EditorConfig.EditorConfig
-PeterJausovec.vscode-docker
 akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
+chenxsan.vscode-standardjs
+DavidAnson.vscode-markdownlint
 formulahendry.docker-explorer
 fosshaas.fontsize-shortcuts
 jewsofhazard.quick-theme-flip
-lukehoban.Go
+jmMeessen.jenkins-declarative-support
 ms-vscode.cpptools
+ms-vscode.Go
 ms-vscode.PowerShell
+PeterJausovec.vscode-docker
+Shan.code-settings-sync
