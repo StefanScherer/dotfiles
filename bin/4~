@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ "$(osascript -e 'tell application "Terminal" to get background color of current settings of selected tab of front window')" =~ "65535" ]]; then
+if [ "$(osascript -e 'tell application "Terminal" to get background color of current settings of selected tab of front window' | sed 's/,.*//')" -gt "32000" ]; then
   osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "One Dark")'
 else
   osascript -e 'tell application "Terminal" to set current settings of selected tab of front window to (first settings set whose name is "One Light")'
