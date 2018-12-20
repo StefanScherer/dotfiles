@@ -166,10 +166,10 @@ function vagrantdm() {
 }
 
 function azuredm() {
-  if [ "$1" == "start" ]; then azure vm start $2 $2; return; fi
-  if [ "$1" == "restart" ]; then azure vm restart $2 $2; return; fi
-  if [ "$1" == "stop" ]; then azure vm stop $2 $2; azure vm deallocate $2 $2; return; fi
-  if [ "$1" == "status" ]; then azure vm show $2 $2; return; fi
+  if [ "$1" == "start" ]; then az vm start -n $2 -g $2; return; fi
+  if [ "$1" == "restart" ]; then az vm restart -n $2 -g $2; return; fi
+  if [ "$1" == "stop" ]; then az vm stop -n $2 -g $2; az vm deallocate -n $2 -g $2; return; fi
+  if [ "$1" == "status" ]; then az vm show -n $2 -g $2; return; fi
   dmhelper $*
 }
 
