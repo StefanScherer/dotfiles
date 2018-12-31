@@ -176,7 +176,7 @@ function azuredm() {
 function dm() {
   vagrantmachines=(2016 2016-box 1709 1803 1809 2019 2019-box insider lcow)
   case "${vagrantmachines[@]}" in  *"${!#}"*) vagrantdm $* ; return ;; esac
-  azuremachines=(az2016 az1709)
+  azuremachines=(az2019 az2016 az1709)
   case "${azuremachines[@]}" in  *"${!#}"*) azuredm $* ; return ;; esac
   dmhelper $*
 }
