@@ -49,7 +49,7 @@ source ~/bin/git-completion.bash
 if [[ "$OSTYPE" == "darwin"*  ]]; then
   export PATH="/usr/local/opt/node@10/bin:$PATH"
 fi
-if [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
