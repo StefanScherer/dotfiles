@@ -47,14 +47,9 @@ export LANG="en_US"
 source ~/bin/git-completion.bash
 
 if [[ "$OSTYPE" == "darwin"*  ]]; then
-  # Mac OSX
-  export NVM_DIR=~/.nvm
-  if [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
-    source $(brew --prefix nvm)/nvm.sh
-  fi
-else
-  [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+  export PATH="/usr/local/opt/node@10/bin:$PATH"
 fi
+if [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
