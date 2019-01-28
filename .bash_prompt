@@ -1,8 +1,6 @@
 # @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
 # Shamelessly copied from https://github.com/gf3/dotfiles
 
-default_username='stefan'
-
 # https://spin.atomicobject.com/2016/05/28/log-bash-history/
 export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then log=~/.logs/bash_history-$(date "+%Y-%m-%d").log; echo "# $(date "+%Y-%m-%d.%H:%M:%S") $(pwd)" >> $log; echo "$(history 1)" >> $log; fi'
 
@@ -45,7 +43,7 @@ function git_info() {
 
 # Only show username/host if not default
 function usernamehost() {
-  if [ $USER != $default_username ]; then echo "${MAGENTA}$USER${RESET}${BOLD} at ${ORANGE}$HOSTNAME${RESET}${BOLD} in "; fi
+  if [[ $USER != stefan* ]]; then echo "${MAGENTA}$USER${RESET}${BOLD} at ${ORANGE}$HOSTNAME${RESET}${BOLD} in "; fi
 }
 
 # iTerm Tab and Title Customization and prompt customization
