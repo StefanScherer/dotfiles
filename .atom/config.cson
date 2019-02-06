@@ -5,6 +5,7 @@
     disabledPackages: [
       "linter-eslint"
       "whitespace"
+      "linter-jenkins"
     ]
     ignoredNames: [
       ".git"
@@ -21,8 +22,9 @@
   "exception-reporting":
     userId: "05162874-e0c6-bfb2-ad47-5bead3da1b69"
   "file-types":
-    ".*\\.wxs$": "text.xml"
-    "^Dockerfile\\..*": "source.dockerfile"
+    "*.wxs$": "text.xml"
+    "Dockerfile.*": "source.dockerfile"
+    "Makefile*": "source.makefile"
   "go-plus":
     goPath: "/Users/stefan/go"
     showPanel: false
