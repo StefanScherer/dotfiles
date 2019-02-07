@@ -4,9 +4,6 @@ export PATH="$HOME/bin:$PATH"
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
 
-if [ -e $HOME/go/bin ]; then
-  export PATH="$PATH:$HOME/go/bin"
-fi
 if [ -e /Applications/Packer ]; then
   export PATH="$PATH:/Applications/Packer"
 fi
@@ -17,6 +14,8 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
+
+export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
 
 # WSL
 if [ -d /mnt/c ]; then
