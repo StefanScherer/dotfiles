@@ -23,6 +23,14 @@ function install_brew() {
   else
     echo "Brew already installed."
   fi
+
+  # NVM
+  echo 'Installing NVM...'
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+  # GVM
+  echo 'Installing GVM...'
+  curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
 }
 
 function install_dotfiles() {

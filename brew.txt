@@ -26,7 +26,6 @@ libusb
 libyaml
 nettle
 nmap
-node@10
 npth
 oniguruma
 openssl
