@@ -24,7 +24,9 @@
   "file-types":
     "*.wxs$": "text.xml"
     "Dockerfile.*": "source.dockerfile"
+    "Jenkinsfile.*": "source.groovy"
     "Makefile*": "source.makefile"
+    inventory: "source.editorconfig"
   "go-plus":
     goPath: "/Users/stefan/go"
     showPanel: false
