@@ -16,6 +16,3 @@ export HISTTIMEFORMAT
 export HISTIGNORE="pwd:exit:date:* --help"
 
 export PACKER_CACHE_DIR=$HOME/.packer_cache
-
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec

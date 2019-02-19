@@ -15,8 +15,6 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
-export PATH="$PATH:$GOPATH/bin:$GOROOT/bin"
-
 # WSL
 if [ -d /mnt/c ]; then
   for file in ~/.{bash_profile_wsl,aliases_wsl,functions_wsl}; do
