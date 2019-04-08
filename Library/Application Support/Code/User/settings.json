@@ -4,5 +4,8 @@
     "workbench.colorTheme": "Atom One Dark",
     "editor.fontSize": 19,
     "qtf.themeOne": "Atom One Dark",
-    "qtf.themeTwo": "Atom One Light"
+    "qtf.themeTwo": "Atom One Light",
+    "jenkins.pipeline.linter.connector.user": "stefanscherer",
+    "jenkins.pipeline.linter.connector.url": "https://ci.docker.com/teams-tools/pipeline-model-converter/validate",
+    "jenkins.pipeline.linter.connector.crumbUrl": "https://ci.docker.com/teams-tools/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)"
 }
