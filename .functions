@@ -141,10 +141,10 @@ function dmhelper() {
   commands=(env inspect ip kill ls regenerate-certs restart rm ssh scp start status stop upgrade url help)
   if [ -d /mnt/c ]; then
     case "${commands[@]}" in  *"$1"*) docker-machine.exe $* ; return ;; esac
-    docker context use $1
+    eval $(docker-machine.exe env -shell bash $1 | sed 's/C://' | sed 's/\\/\//g')
   else
     case "${commands[@]}" in  *"$1"*) docker-machine $* ; return ;; esac
-    docker context use $1
+    eval $(docker-machine env $1)
   fi
 }
 
@@ -162,7 +162,6 @@ function vagrantdm() {
   if [ "$1" == "status" ]; then vg status $2; return; fi
   if [ "$1" == "rdp" ]; then vg rdp $2; return; fi
   if [ "$1" == "regenerate-certs" ]; then vg provision $2; return; fi
-  if [ "$1" == "ip" ]; then docker context inspect $2 | jq -r '.[0].Endpoints.docker.Host | .[6:] | .[:-5]'; return; fi
   dmhelper $*
 }
 
@@ -177,7 +176,7 @@ function azuredm() {
 function dm() {
   vagrantmachines=(2016 2016-box 1709 1803 1809 1903 2019 2019-box insider lcow)
   case "${vagrantmachines[@]}" in  *"${!#}"*) vagrantdm $* ; return ;; esac
-  azuremachines=(az2019 az2016 az1709 az1803)
+  azuremachines=(az2019 az2016 az1709 az1803 az1903)
   case "${azuremachines[@]}" in  *"${!#}"*) azuredm $* ; return ;; esac
   dmhelper $*
 }
