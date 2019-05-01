@@ -1,9 +1,0 @@
-#!/bin/bash
-# Sublime Text 3 on Mac OS X Mavericks
-if [ -f "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ]; then
-  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" $*
-fi
-# Sublime Text 3 on Ubuntu, installed with apt-get, see http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2
-if [ -f /opt/sublime_text/sublime_text ]; then
-  /opt/sublime_text/sublime_text $*
-fi
