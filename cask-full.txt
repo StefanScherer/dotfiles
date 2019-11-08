@@ -1,9 +1,9 @@
 1password
 atom
-disk-inventory-x
 docker
 dropbox
 google-chrome
+inspec
 kap
 microsoft-office
 sizeup
@@ -13,6 +13,8 @@ tunnelblick
 vagrant
 vagrant-manager
 vagrant-vmware-utility
+virtualbox
 visual-studio-code
 vmware-fusion
+vnc-viewer
 wireshark
