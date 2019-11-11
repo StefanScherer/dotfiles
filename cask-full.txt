@@ -1,5 +1,6 @@
 1password
 atom
+daisydisk
 docker
 dropbox
 google-chrome
