@@ -2,15 +2,16 @@ akamud.vscode-theme-onedark
 akamud.vscode-theme-onelight
 chenxsan.vscode-standardjs
 DavidAnson.vscode-markdownlint
+drewbourne.vscode-remark-lint
 EditorConfig.EditorConfig
 formulahendry.docker-explorer
 fosshaas.fontsize-shortcuts
 janjoerke.jenkins-pipeline-linter-connector
 jewsofhazard.quick-theme-flip
 jmMeessen.jenkins-declarative-support
+ms-azuretools.vscode-docker
 ms-vscode.cpptools
 ms-vscode.Go
 ms-vscode.powershell
-PeterJausovec.vscode-docker
 Shan.code-settings-sync
 timonwong.shellcheck
