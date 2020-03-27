@@ -1,2 +1,8 @@
 #!/bin/bash
 osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+
+if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')" == "true" ]; then
+  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Dark")'
+else
+  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Light")'
+fi
