@@ -31,5 +31,15 @@
     {
         "key": "ctrl+1",
         "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+y",
+        "command": "redo",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "redo",
+        "when": "textInputFocus && !editorReadonly"
     }
 ]
