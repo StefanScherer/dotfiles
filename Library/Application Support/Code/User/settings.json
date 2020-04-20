@@ -8,5 +8,8 @@
     "jenkins.pipeline.linter.connector.crumbUrl": "https://ci.docker.com/teams-tools/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb)",
     "editor.lineHeight": 0,
     "editor.fontSize": 14,
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.preferredDarkColorTheme": "Atom One Dark",
+    "workbench.preferredLightColorTheme": "Atom One Light"
 }
