@@ -1,8 +1,19 @@
 #!/bin/bash
-osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
-if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')" == "true" ]; then
-  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Dark")'
+if [ ! -d /mnt/c ]; then
+  # Mac
+  osascript -e 'tell application "System Events" to tell appearance preferences to set dark mode to not dark mode'
+
+  if [ "$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')" == "true" ]; then
+    osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Dark")'
+  else
+    osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Light")'
+  fi
 else
-  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Light")'
+  # Windows in WSL
+  if reg.exe query 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme | grep -q 0x1; then
+    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 0 > /dev/null
+  else
+    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 1 > /dev/null
+  fi
 fi
