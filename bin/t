@@ -13,7 +13,9 @@ else
   # Windows in WSL
   if reg.exe query 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme | grep -q 0x1; then
     reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 0 > /dev/null
+    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUseLightTheme /t REG_DWORD /f /d 0 > /dev/null
   else
     reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 1 > /dev/null
+    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUseLightTheme /t REG_DWORD /f /d 1 > /dev/null
   fi
 fi
