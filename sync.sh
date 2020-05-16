@@ -28,13 +28,13 @@ function doIt() {
 
   rsync --exclude ".git/" --exclude "images/" --exclude Library --exclude AppData \
         --exclude "sync.sh" --exclude "README.md" \
-        --exclude "brew.txt" --exclude "atom-config.cson" \
+        --exclude "brew.txt" \
         --exclude "cask-minimal.txt" --exclude "cask-full.txt" \
         --exclude "setup-mac" --exclude "plist" \
-        --exclude "fetch-code-prefs.sh" --exclude "install-atom-plugins.sh" \
+        --exclude "fetch-code-prefs.sh" \
         --exclude "npm-install.sh" --exclude "LICENSE.txt" \
         --exclude ".gitkeep" --exclude ".gitconfig" --exclude "fetch-sublime-prefs.sh" \
-        --exclude "fetch-atom-prefs.sh" -av . ~
+        -av . ~
   if [ ! -f ~/.gitconfig ]; then
     cp .gitconfig ~/.gitconfig
   fi
@@ -53,12 +53,6 @@ function doIt() {
         done
       fi
     fi
-  fi
-
-  # Atom
-  if command -v apm > /dev/null 2>&1; then
-    echo "Installing Atom plugins..."
-    ~/code/dotfiles/install-atom-plugins.sh
   fi
 }
 

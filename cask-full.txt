@@ -1,5 +1,4 @@
 1password
-atom
 daisydisk
 docker
 dropbox
@@ -7,10 +6,9 @@ google-chrome
 inspec
 kap
 microsoft-office
-sizeup
 skitch
 slack
-tunnelblick
+spectacle
 vagrant
 vagrant-manager
 vagrant-vmware-utility
