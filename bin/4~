@@ -1,7 +1,0 @@
-#!/bin/bash
-# press fn + F12 in terminal, you get "4~" then press RETURN
-if [ "$(osascript -e 'tell application "Terminal" to get background color of current settings of selected tab of front window' | sed 's/,.*//')" -gt "32000" ]; then
-  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Dark")'
-else
-  osascript -e 'tell application "Terminal" to set current settings of tabs of windows to (first settings set whose name is "One Light")'
-fi
