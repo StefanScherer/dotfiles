@@ -17,7 +17,16 @@ function doIt() {
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
   fi
 
-  rsync --exclude ".git/" --exclude "images/" \
+  if [ ! -d /mnt/c ]; then
+    # on Mac skip Windows AppData folder
+    rsync -av Library ~
+  else
+    # on Windows skip Mac Library folder
+    WINHOME=$(wslpath "$(cmd.exe /C "echo %USERPROFILE%" 2>/dev/null | tr -d '\r' | tail -1)")
+    rsync -av AppData "$WINHOME"
+  fi
+
+  rsync --exclude ".git/" --exclude "images/" --exclude Library --exclude AppData \
         --exclude "sync.sh" --exclude "README.md" \
         --exclude "brew.txt" --exclude "atom-config.cson" \
         --exclude "cask-minimal.txt" --exclude "cask-full.txt" \
@@ -28,11 +37,6 @@ function doIt() {
         --exclude "fetch-atom-prefs.sh" -av . ~
   if [ ! -f ~/.gitconfig ]; then
     cp .gitconfig ~/.gitconfig
-  fi
-
-  if [ -d /mnt/c ]; then
-    echo Copy WSL vmrun helper script
-    sudo cp bin/vmrun.exe-helper "/usr/bin/C:\Program Files (x86)\VMware\VMware Workstation\vmrun.exe"
   fi
 
   if which vim >/dev/null 2>&1; then

@@ -11,11 +11,15 @@ if [ ! -d /mnt/c ]; then
   fi
 else
   # Windows in WSL
+  WINHOME=$(wslpath "$(cmd.exe /C "echo %USERPROFILE%" 2>/dev/null | tr -d '\r' | tail -1)")
+
   if reg.exe query 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme | grep -q 0x1; then
-    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 0 > /dev/null
-    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUsesLightTheme /t REG_DWORD /f /d 0 > /dev/null
+    useLightTheme=0
+    sed -i 's/"colorScheme": "OneLight"/"colorScheme": "OneDark"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
   else
-    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d 1 > /dev/null
-    reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUsesLightTheme /t REG_DWORD /f /d 1 > /dev/null
+    useLightTheme=1
+    sed -i 's/"colorScheme": "OneDark"/"colorScheme": "OneLight"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
   fi
+  reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUsesLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
+  reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
 fi
