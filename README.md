@@ -78,42 +78,6 @@ sync.sh [--all|-a] [--force|-f]
   * also integrates my [windows-docker-machine](https://github.com/StefanScherer/windows-docker-machine)'s 2016, 1709 and insider using Vagrant to start/stop them
   * also integrates my [docker-windows-azure](https://github.com/StefanScherer/docker-windows-azure) machines az2016 and az1709 using azure cli to start/stop them
 
-### Atom
-
-My preferences for Atom.io are also stored here.
-
-* **autocomplete-plus** - `keymap.cson` use ENTER instead of TAB
-* **editorconfig**
-* **language-batch**
-* **language-powershell**
-
-To setup Atom from scratch, first install it, then
-```bash
-brew cask install atom
-apm install parcel
-```
-Then open Atom and use menu `Packages / Parcel / Sync` to install all other plugins.
-
-### Sublime Text 3
-
-My preferences for Sublime Text 3 are also stored in the repo. Be aware.
-To have sublime in command line, I use my helper script `subl`
-The following packages will be installed by Package Control
-
-* **Ansible**
-* **ApplySyntax**
-* **Bats**
-* **Cucumber**
-* **EditorConfig**
-* **GoSublime**
-* **Markdown Preview**
-* **PowerShell**
-
-
-### Sublime commands
-
-* `alt+m` open markdown file in browser
-
 ### VIM
 
 * installs **Vundle** and some other stuff
@@ -125,7 +89,7 @@ The following packages will be installed by Package Control
 * `,ss`: strip trailing white space
 * `,e`: format JavaScript code with esformatter (`npm install -g esformatter`)
 
-# Setup a new Mac box
+## Setup a new Mac box
 
 The simplest way to setup a new Mac box is to download and run the `setup-mac` script.
 
