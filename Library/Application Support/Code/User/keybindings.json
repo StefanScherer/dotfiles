@@ -41,5 +41,13 @@
         "key": "shift+cmd+z",
         "command": "redo",
         "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.transformToLowercase"
     }
 ]
