@@ -8,7 +8,6 @@ bats
 bluetoothconnector
 blueutil
 carthage
-cdrtools
 docker-machine
 dvdrtools
 flash
