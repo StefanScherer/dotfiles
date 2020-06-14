@@ -56,7 +56,6 @@ shfmt
 socat
 sqlite
 ssh-copy-id
-sshpass
 terraform
 tree
 vim

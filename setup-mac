@@ -25,12 +25,16 @@ function install_brew() {
 	fi
 
 	# NVM
-	echo 'Installing NVM...'
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+        if [ ! -d ~/.nvm ]; then
+		echo 'Installing NVM...'
+		curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+        fi
 
 	# GVM
-	echo 'Installing GVM...'
-	curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+        if [ ! -d ~/.gvm ]; then
+		echo 'Installing GVM...'
+		curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer | bash
+        fi
 }
 
 function install_dotfiles() {
