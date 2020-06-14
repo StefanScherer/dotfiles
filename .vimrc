@@ -170,6 +170,9 @@ map <leader>qq :cclose<CR>
 " Insert newline
 map <leader><Enter> o<ESC>
 
+" Map jj to esc to go back to normal mode
+inoremap jj <esc>
+
 " Search and replace word under cursor (,*)
 nnoremap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
