@@ -50,10 +50,6 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # GIT STUFF
 
-# Undo a `git push`
-alias undopush="git push -f origin HEAD^:master"
-
-
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 
@@ -77,10 +73,6 @@ alias logvi=timerefvi
 if ! [[ "$OSTYPE" =~ ^darwin ]]; then
   alias open="xdg-open"
 fi
-
-alias syncfork='git fetch upstream && git checkout master && git merge upstream/master'
-alias mergefork='git merge upstream/master'
-alias fuck='sudo $(history -p \!\!)'
 
 # docker
 alias docker-rm-all='docker rm -vf $(docker ps -aq)'

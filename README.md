@@ -29,7 +29,6 @@ sync.sh [--all|-a] [--force|-f]
   Usage: anothertool | addtime
 * **timeref**: show relative time diffs in logfile.
   Usage: timeref logfile | gvim -
-* **syncfork**: fetch from upstream and merge master branch
 * `Fn + F12`: toggle One Dark/Light theme in terminal
 * **t**: toggle Dark Mode of macOS and Windows from WSL
 * **whoseport**: Who is running that port?
@@ -43,7 +42,6 @@ sync.sh [--all|-a] [--force|-f]
 * **.....**: four dirs up
 * **~**: go into users home directory
 * **eachdir**: start a command for all sub directories
-* **fuck**: repeat last command with `sudo` ;-)
 * **gi**: create `.gitignore` file, see [gitignore.io](https://gitignore.io)
 * **gitcloneall**: clone all repos of an organization or user
   ```

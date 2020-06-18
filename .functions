@@ -94,7 +94,7 @@ function gitls {
     dir=`echo $d | sed -e 's|^\.\/||' -e 's|\/.git||'`
     FOLDER=$GREEN
     BRANCH=$PURPLE
-    if [ "$branch" != "master" ]; then
+    if [ "$branch" != "main" ] && [ "$branch" != "master" ]; then
       FOLDER=$ORANGE
       BRANCH=$ORANGE
     fi
