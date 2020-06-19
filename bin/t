@@ -16,9 +16,11 @@ else
   if reg.exe query 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme | grep -q 0x1; then
     useLightTheme=0
     sed -i 's/"colorScheme": "OneLight"/"colorScheme": "OneDark"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+    sed -i 's/"colorScheme": "OneLight"/"colorScheme": "OneDark"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
   else
     useLightTheme=1
     sed -i 's/"colorScheme": "OneDark"/"colorScheme": "OneLight"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+    sed -i 's/"colorScheme": "OneDark"/"colorScheme": "OneLight"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
   fi
   reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUsesLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
   reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
