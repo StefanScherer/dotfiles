@@ -6,3 +6,4 @@ alias e=explorer.exe
 alias notepad=notepad.exe
 alias packer=packer.exe
 alias open="powershell.exe start"
+alias pbcopy=clip.exe
