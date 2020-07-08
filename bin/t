@@ -12,16 +12,27 @@ if [ ! -d /mnt/c ]; then
 else
   # Windows in WSL
   WINHOME=$(wslpath "$(cmd.exe /C "echo %USERPROFILE%" 2>/dev/null | tr -d '\r' | tail -1)")
+  settings="$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+  settingsPreview="$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
 
   if reg.exe query 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme | grep -q 0x1; then
     useLightTheme=0
-    sed -i 's/"colorScheme": "OneLight"/"colorScheme": "OneDark"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
-    sed -i 's/"colorScheme": "OneLight"/"colorScheme": "OneDark"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
+    fromTheme=OneLight
+    toTheme=OneDark
   else
     useLightTheme=1
-    sed -i 's/"colorScheme": "OneDark"/"colorScheme": "OneLight"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
-    sed -i 's/"colorScheme": "OneDark"/"colorScheme": "OneLight"/g' "$WINHOME/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
+    fromTheme=OneDark
+    toTheme=OneLight
   fi
+  if [ -f "$settings" ]; then
+    sed "s/\"colorScheme\": \"$fromTheme\"/\"colorScheme\": \"$toTheme\"/g" "$settings" >/tmp/terminal$$.json
+    cp /tmp/terminal$$.json "$settings"
+  fi
+  if [ -f "$settingsPreview" ]; then
+    sed "s/\"colorScheme\": \"$fromTheme\"/\"colorScheme\": \"$toTheme\"/g" "$settingsPreview" >/tmp/terminal$$.json
+    cp /tmp/terminal$$.json "$settingsPreview"
+  fi
+  rm /tmp/terminal$$.json
   reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v SystemUsesLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
   reg.exe add 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize' /v AppsUseLightTheme /t REG_DWORD /f /d $useLightTheme > /dev/null
 fi
