@@ -3,6 +3,9 @@ export PATH="$HOME/bin:$PATH"
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
+if [ -e /opt/homebrew/bin ]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
 
 if [ -e /Applications/Packer ]; then
   export PATH="$PATH:/Applications/Packer"
