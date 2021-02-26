@@ -10,9 +10,9 @@ inspec
 kap
 losslesscut
 microsoft-office
+rectangle
 skitch
 slack
-spectacle
 vagrant
 vagrant-manager
 vagrant-vmware-utility

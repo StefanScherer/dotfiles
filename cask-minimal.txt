@@ -1,2 +1,2 @@
-spectacle
+rectangle
 visual-studio-code
