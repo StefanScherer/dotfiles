@@ -67,8 +67,8 @@ function install_brew_packages() {
 	echo "Install new casks from cask-$mode.txt"
 	comm -23 \
 		<(sort ~/code/dotfiles/cask-$mode.txt) \
-		<(brew cask ls) |
-		xargs brew cask install
+		<(brew list) |
+		xargs brew install
 }
 
 function install_terminal_profiles() {
