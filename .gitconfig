@@ -6,6 +6,9 @@
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	undo-commit = reset --soft HEAD~1
+	oldest-ancestor = !bash -c 'diff --old-line-format='' --new-line-format='' <(git rev-list --first-parent "${1:-master}") <(git rev-list --first-parent "${2:-HEAD}") | head -1' -
+        branchdiff = !sh -c \"git diff `git oldest-ancestor`.. $*\"
+	branchlog = !sh -c \"git log `git oldest-ancestor`.. $*\"
 [color]
 	ui = always
 [core]
