@@ -48,7 +48,7 @@ source ~/bin/git-completion.bash
 
 if [[ "$OSTYPE" == "darwin"*  ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
-  export PATH="/usr/local/opt/node@10/bin:$PATH"
+  export PATH="/usr/local/opt/node@12/bin:$PATH"
 fi
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 

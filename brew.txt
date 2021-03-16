@@ -29,7 +29,7 @@ jq
 lua
 nettle
 nmap
-node@10
+node@12
 npth
 oniguruma
 openssl
