@@ -13,6 +13,6 @@ HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
 
 # Make some commands not show up in history
-export HISTIGNORE="pwd:exit:date:* --help"
+export HISTIGNORE="pwd:exit:date:* --help:* --recursive*"
 
 export PACKER_CACHE_DIR=$HOME/.packer_cache
