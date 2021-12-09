@@ -18,7 +18,7 @@ function check_macos_updated() {
 function install_brew() {
 	if ! command -v brew >/dev/null 2>&1; then
 		echo "Installing Brew..."
-		printf "\n\n" | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+                /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		brew analytics off
 	else
 		echo "Brew already installed."
