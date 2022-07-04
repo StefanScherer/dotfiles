@@ -11,7 +11,6 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 fi
 
 if tput setaf 1 &> /dev/null; then
-  tput sgr0
   MAGENTA=$(tput setaf 5)
   ORANGE=$(tput setaf 4)
   GREEN=$(tput setaf 2)
