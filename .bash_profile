@@ -26,6 +26,10 @@ if [ -d /mnt/c ]; then
   unset file
 fi
 
+if [ -e /opt/homebrew/bin/infra-cli ]; then
+  eval "$(infra-cli aliases)"
+fi
+
 if [ -e /usr/local/bin/infra-cli ]; then
   eval "$(infra-cli aliases)"
 fi
