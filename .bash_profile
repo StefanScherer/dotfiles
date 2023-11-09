@@ -26,6 +26,10 @@ if [ -d /mnt/c ]; then
   unset file
 fi
 
+if [ -e /usr/local/bin/infra-cli ]; then
+  eval "$(infra-cli aliases)"
+fi
+
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
