@@ -85,3 +85,7 @@ alias passhypriot='PASSWORD_STORE_DIR=~/code/hypriot/pass/password-store/ pass'
 alias antenne='printf "%s\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n" TAC 1 0 1 1 0 | nc 192.168.1.103 23'
 alias vsx-off='printf "%s\r\n" PF | nc 192.168.1.103 23'
 alias br2='printf "%s\r\n" 1TP | nc 192.168.1.103 23'
+
+if [ -e /usr/local/bin/infra-cli ]; then
+  exec $(infra-cli aliases)
+fi
