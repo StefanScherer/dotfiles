@@ -18,5 +18,6 @@
     "gitlens.views.fileHistory.location": "gitlens",
     "gitlens.views.lineHistory.location": "gitlens",
     "gitlens.views.compare.location": "gitlens",
-    "gitlens.views.search.location": "gitlens"
+    "gitlens.views.search.location": "gitlens",
+    "editor.formatOnSave": true
 }
