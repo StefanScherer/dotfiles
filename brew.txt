@@ -1,4 +1,5 @@
 adns
+aztfexport
 dvdrtools
 flash
 gdbm
