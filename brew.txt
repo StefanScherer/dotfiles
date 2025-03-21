@@ -41,6 +41,7 @@ socat
 sqlite
 ssh-copy-id
 tree
+vegeta
 vim
 wakeonlan
 watch
