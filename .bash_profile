@@ -11,6 +11,10 @@ if [ -e /Applications/Packer ]; then
   export PATH="$PATH:/Applications/Packer"
 fi
 
+if [ -e ${HOME}/Library/Python/3.9/bin ]; then
+  export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+fi
+
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
@@ -86,3 +90,7 @@ if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 export GPG_TTY=$(tty)
+
+[[ -s "/Users/stefanscherer/.gvm/scripts/gvm" ]] && source "/Users/stefanscherer/.gvm/scripts/gvm"
+
+alias assume=". assume"
