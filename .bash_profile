@@ -38,6 +38,11 @@ if [ -e /usr/local/bin/infra-cli ]; then
   eval "$(infra-cli aliases)"
 fi
 
+# Cursor CLI and agent
+if [ -e $HOME/.local/bin ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
