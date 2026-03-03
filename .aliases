@@ -85,3 +85,12 @@ alias passhypriot='PASSWORD_STORE_DIR=~/code/hypriot/pass/password-store/ pass'
 alias antenne='printf "%s\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n%sTP\r\n" TAC 1 0 1 1 0 | nc 192.168.1.103 23'
 alias vsx-off='printf "%s\r\n" PF | nc 192.168.1.103 23'
 alias br2='printf "%s\r\n" 1TP | nc 192.168.1.103 23'
+alias helm-ecr-login="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 676043725699.dkr.ecr.us-east-1.amazonaws.com"
+
+# Claude CLI with automatic 1Password API key
+function claude() {
+  if [ -z "$ANTHROPIC_API_KEY" ]; then
+    export ANTHROPIC_API_KEY=$(op read op://Employee/ClaudeCodeKey/password)
+  fi
+  command claude "$@"
+}
