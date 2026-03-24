@@ -67,7 +67,9 @@ if [[ "$OSTYPE" == "darwin"*  ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
   export PATH="/usr/local/opt/node@12/bin:$PATH"
 fi
-[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
+if command -v fnm &>/dev/null; then                                                                                                                                                        
+  eval "$(fnm env --use-on-cd --shell bash)"                                                                                                                                               
+fi
 
 # autoenv
 [[ -s /usr/local/opt/autoenv/activate.sh ]] && source /usr/local/opt/autoenv/activate.sh
@@ -81,11 +83,6 @@ fi
 if [ -f "$HOME/code/azure-cli/az.completion" ]; then
   source "$HOME/code/azure-cli/az.completion"
 fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
