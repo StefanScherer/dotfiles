@@ -67,8 +67,8 @@ if [[ "$OSTYPE" == "darwin"*  ]]; then
   export BASH_SILENCE_DEPRECATION_WARNING=1
   export PATH="/usr/local/opt/node@12/bin:$PATH"
 fi
-if command -v fnm &>/dev/null; then                                                                                                                                                        
-  eval "$(fnm env --use-on-cd --shell bash)"                                                                                                                                               
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env --shell bash)"
 fi
 
 # autoenv
