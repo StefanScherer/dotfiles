@@ -1,8 +1,9 @@
-daisydisk
-google-chrome
-kap
+1password-cli
+claude
+claude-code
+ghostty
+mitmproxy
 losslesscut
-microsoft-office
 rectangle
-skitch
-slack
+session-manager-plugin
+visual-studio-code

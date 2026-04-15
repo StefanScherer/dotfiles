@@ -15,3 +15,4 @@ Thumbs.db
 
 *.last-run
 *.system-ca-bundle
+.claude

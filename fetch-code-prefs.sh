@@ -3,3 +3,6 @@
 # OSX
 cp ~/Library/Application\ Support/Code/User/*.json ./Library/Application\ Support/Code/User/
 code --list-extensions >./Library/Application\ Support/Code/User/extensions.txt
+
+# Ghostty
+cp ~/.config/ghostty/config ./.config/ghostty/config
