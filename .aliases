@@ -88,9 +88,9 @@ alias br2='printf "%s\r\n" 1TP | nc 192.168.1.103 23'
 alias helm-ecr-login="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 676043725699.dkr.ecr.us-east-1.amazonaws.com"
 
 # Claude CLI with automatic 1Password API key
-function claude() {
-  if [ -z "$ANTHROPIC_API_KEY" ]; then
-    export ANTHROPIC_API_KEY=$(op read op://Employee/ClaudeCodeKey/password)
-  fi
-  command claude "$@"
-}
+#function claude() {
+#  if [ -z "$ANTHROPIC_API_KEY" ]; then
+#    export ANTHROPIC_API_KEY=$(op read op://Employee/ClaudeCodeKey/password)
+#  fi
+#  command claude "$@"
+#}
