@@ -47,7 +47,15 @@
 [user]
 	name = Stefan Scherer
 	email = scherer_stefan@icloud.com
+	signingkey = ssh-rsa AAAA.....put-your-public-key-here.....M=
 [push]
 	default = simple
 [commit]
 	gpgsign = true
+[gpg]
+	format = ssh
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+ 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = /Users/stefan/.config/git/allowed_signers
