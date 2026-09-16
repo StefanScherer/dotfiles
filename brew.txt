@@ -2,7 +2,6 @@ adns
 awscli
 azure-cli
 aztfexport
-code-cli
 docker/internal/docker-iam
 docker/internal/infra-cli
 dvdrtools
